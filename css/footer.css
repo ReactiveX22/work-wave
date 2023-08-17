@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.footer {
+  bottom: 0;
+  background-color: var(--primary-text-color);
+  color: var(--primary-background-color);
+  width: 100%;
+  padding: 2px 0;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.footer .credits,
+.team-info ul li p,
+.copyright {
+  font-size: 12px;
+}
+
+.team-info ul {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-info ul li {
+  list-style: none;
+  margin-left: 15px;
+}

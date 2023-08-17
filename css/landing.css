@@ -1,0 +1,109 @@
+@import url("common.css");
+
+.landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--primary-background-color);
+  padding: 20px;
+  margin-top: 50px;
+  height: auto;
+  min-width: 500px;
+}
+
+.content-box h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: 84px;
+  animation: fadeinH1 0.5s ease-in-out;
+}
+
+.words {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5px;
+  color: var(--primary-text-color);
+  line-height: 1;
+}
+
+.words .and p {
+  font-weight: 400;
+  font-size: 22px;
+  animation: fadeinH1 0.5s ease-in-out;
+  margin: 5px;
+}
+
+.words .track {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.words:hover .track {
+  opacity: 0.1;
+}
+
+.words .boost {
+  opacity: 0.1;
+  transition: opacity 0.5s;
+}
+
+.words:hover .boost {
+  opacity: 1;
+}
+
+.content-box .desc {
+  margin-top: 10%;
+  text-align: center;
+  width: 100%;
+}
+
+.content-box .desc p {
+  font-weight: 300;
+  font-size: 16px;
+  margin: 15px 0px;
+  animation: fadeinH1 0.6s ease-in-out;
+}
+
+.login-signup {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.btn {
+  margin: 5px;
+  padding: 5px 20px;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  font-size: 18px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.27);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-text-color);
+  color: var(--primary-background-color);
+}
+
+@keyframes fadeinH1 {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

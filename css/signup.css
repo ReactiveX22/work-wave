@@ -1,0 +1,137 @@
+@import url("common.css");
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.error-box {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  bottom: 20px;
+  right: 20px;
+  width: fit-content;
+  border-radius: 3px;
+  background-color: var(--primary-text-color);
+  color: var(--primary-background-color);
+  animation: slide-in 0.3s ease-in;
+  box-shadow: 0px 0px 0px var(--primary-text-color);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.error-box:hover {
+  box-shadow: 0px 0px 8px var(--primary-text-color);
+}
+
+.error-icon {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.error-box p {
+  margin: 5px;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 48;
+  margin: 30px 0;
+}
+
+.login__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  width: 400px;
+  border-radius: 3px;
+  background-color: var(--primary-background-color);
+  box-shadow: 0px 0px 10px var(--primary-text-color);
+  animation: fadein 0.6s ease-in-out;
+}
+
+.signup {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 10px 0;
+}
+
+a {
+  color: var(--primary-text-color);
+}
+
+.input__box {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  flex-flow: column;
+  position: relative;
+  width: 310px;
+  margin-bottom: 25px;
+}
+
+.input__box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  font-weight: 300;
+  color: var(--primary-text-color);
+  border-bottom: 2px solid var(--primary-text-color);
+}
+
+.input__box label {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.input__box .icon {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  font-size: 15px;
+}
+
+button {
+  width: 100%;
+  min-height: 30px;
+  margin: 30px 0 50px 0;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--primary-background-color);
+  background-color: var(--primary-text-color);
+  box-shadow: 0px 0px 0px var(--primary-text-color);
+  transition: box-shadow 0.3s ease-in-out;
+  border: none;
+  border-radius: 3px;
+}
+
+button:hover {
+  box-shadow: 0px 0px 8px var(--primary-text-color);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
