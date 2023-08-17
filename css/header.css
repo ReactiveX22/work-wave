@@ -10,11 +10,11 @@ nav {
   background-color: var(--primary-text-color);
   color: var(--primary-background-color);
   width: 100%;
-  padding: 2px 0;
+  padding: 0px 0;
+  box-shadow: 0px 0px 3px var(--primary-text-color);
 }
 
 nav .menu {
-  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,7 +22,7 @@ nav .menu {
 }
 
 .menu .logo a {
-  padding: 5px 5px;
+  padding: 2px 5px;
   text-decoration: none;
   color: var(--primary-background-color);
   font-weight: 900;
@@ -30,26 +30,33 @@ nav .menu {
 }
 
 .menu ul {
-  display: inline-flex;
+  display: flex;
   align-items: center;
 }
 
 .menu ul li {
+  display: flex;
+  align-items: center;
   list-style: none;
   margin-left: 10px;
+  padding: 2px 0;
 }
 
 .menu ul li a {
+  font-weight: 400;
+  font-size: 14px;
   text-decoration: none;
   color: var(--primary-background-color);
   border-radius: 5px;
-  padding: 8px 15px;
-  transition: background-color 0.3s, color 0.3s;
+  padding: 6px 15px;
+  box-shadow: 0px 0px 0px var(--primary-background-color);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .menu ul li a:hover {
   background-color: var(--primary-background-color);
   color: var(--primary-text-color);
+  box-shadow: 0px 0px 5px var(--primary-background-color);
 }
 
 .menu ul li .dark-mode-toggle {
@@ -58,10 +65,12 @@ nav .menu {
   border-radius: 5px;
   cursor: pointer;
   color: var(--primary-background-color);
-  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0px 0px 0px var(--primary-background-color);
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .menu ul li .dark-mode-toggle:hover {
   background-color: var(--primary-background-color);
   color: var(--primary-text-color);
+  box-shadow: 0px 0px 5px var(--primary-background-color);
 }

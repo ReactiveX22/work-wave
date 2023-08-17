@@ -13,25 +13,33 @@
   width: 100%;
   padding: 2px 0;
   margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 10px;
-}
-
-.footer .credits,
-.team-info ul li p,
-.copyright {
-  font-size: 12px;
-}
-
-.team-info ul {
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5px 10px;
+  box-shadow: 0px 0px 3px var(--primary-text-color);
 }
 
-.team-info ul li {
-  list-style: none;
-  margin-left: 15px;
+.credits,
+.copyright {
+  font-size: 12px;
+  line-height: 14px;
+  width: 210px;
+}
+
+.team-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 250px;
+}
+
+.team-info p {
+  font-size: 12px;
+  line-height: 14px;
+  padding: 5px 0;
+}
+
+.team-info b {
+  font-weight: 600;
 }

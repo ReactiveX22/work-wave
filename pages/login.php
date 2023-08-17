@@ -13,14 +13,14 @@
 
     <section class="login">
         <div class="login__box">
-            <form action="">
+            <form action="./includes/login.inc.php" method="post" enctype="multipart/form-data">
                 <h2>login</h2>
                 <div class="input__box">
-                    <label for="email">Email</label>
+                    <label for="username">Username</label>
                     <span class="icon">
                         <i class="fa-solid fa-envelope"></i>
                     </span>
-                    <input type="email" name="email" id="email">
+                    <input type="username" name="username" id="username">
                 </div>
                 <div class="input__box">
                     <label for="password">Password</label>

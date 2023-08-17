@@ -1,13 +1,10 @@
 <?php
 
-require_once '../includes/config_session.inc.php';
-
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $username = $_POST["username"];
-    $email = $_POST["email"];
     $password = $_POST["password"];
+    $email = $_POST["email"];
 
     if (!empty($_FILES["prfl-pic"])) {
         $profile_pic_file = $_FILES["prfl-pic"];
@@ -41,6 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $errors["file-toobig"] = "File size is too big!";
             }
         }
+
+        require_once '../includes/config_session.inc.php';
 
         if ($errors) {
             $_SESSION['errors_signup'] = $errors;
