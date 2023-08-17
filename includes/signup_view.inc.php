@@ -20,5 +20,14 @@ function check_signup_errors()
         echo '</div>';
 
         unset($_SESSION['errors_signup']);
+    } elseif (isset($_GET["signup"]) && $_GET["signup"] === "success") {
+        echo '<div id="error-box" class="success-box">';
+        echo '<div class="error-icon">';
+        echo '<i class="fa-solid fa-circle-exclamation"></i>';
+        echo '</div>';
+        echo '<div class="error-msg">';
+        echo '<p>' . "Signup SUCCESS!" . '</p>';
+        echo '</div>';
+        echo '</div>';
     }
 }

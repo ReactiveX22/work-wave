@@ -24,3 +24,21 @@ function get_email(object $pdo, string $email)
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
+
+
+function set_user(object $pdo, string $username, string $password, string $email, string $image_path)
+{
+    $query = "INSERT INTO employees (username, password, email, image_path) VALUES (:username, :password, :email, :image_path);";
+
+    $stmt = $pdo->prepare($query);
+
+    $stmt->bindParam(":username", $username);
+    $stmt->bindParam(":password", $password);
+    $stmt->bindParam(":email", $email);
+    $stmt->bindParam(":image_path", $image_path);
+
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}

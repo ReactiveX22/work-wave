@@ -12,7 +12,7 @@
 <body>
     <section class="login">
         <div class="login__box">
-            <form action="./includes/signup.inc.php" method="post">
+            <form action="./includes/signup.inc.php" method="post" enctype="multipart/form-data">
                 <h2>singup</h2>
                 <div class="input__box">
                     <label for="username">Username</label>
@@ -35,6 +35,14 @@
                     </span>
                     <input type="password" name="password" id="password">
                 </div>
+
+                <label>Profile Picture</label>
+                <div class="input__image" onclick="document.getElementById('image').click();">
+                    <i class="far fa-image"></i>
+                    <img id="preview" src="#" alt="Image Preview">
+                    <input type="file" id="image" name="prfl-pic" accept="image/*" onchange="previewImage(this);">
+                </div>
+
                 <p class="signup">Already a member? <a href="index.php?page=login">Login here.</a></p>
                 <button>signup</button>
             </form>
@@ -44,6 +52,26 @@
         </div>
     </section>
 
+    <!-- TODO separate this! -->
+    <script>
+        const previewImage = document.getElementById('preview');
+        const imageInput = document.getElementById('image');
+
+        imageInput.addEventListener('change', function() {
+            const selectedFile = imageInput.files[0];
+
+            if (selectedFile && selectedFile.type.startsWith('image/')) {
+                previewImage.style.display = 'block';
+                previewImage.src = URL.createObjectURL(selectedFile);
+                previewImage.previousElementSibling.style.display = 'none'; // Hide the icon
+            } else {
+                alert('Please select a valid image file.');
+                imageInput.value = ''; // Clear the input
+                previewImage.style.display = 'none';
+                previewImage.previousElementSibling.style.display = 'block'; // Show the icon
+            }
+        });
+    </script>
 </body>
 
 </html>
