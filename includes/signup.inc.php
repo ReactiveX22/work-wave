@@ -1,5 +1,8 @@
 <?php
-session_start();
+
+require_once '../includes/config_session.inc.php';
+
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $username = $_POST["username"];
@@ -41,6 +44,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($errors) {
             $_SESSION['errors_signup'] = $errors;
+
+            $signup_data = [
+                "username" => $username,
+                "email" => $email,
+            ];
+
+            $_SESSION["signup_data"] = $signup_data;
+
             header("Location: ../index.php?page=signup");
             die();
         }

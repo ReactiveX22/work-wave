@@ -1,6 +1,5 @@
 <?php
 require_once 'includes/config_session.inc.php';
-require_once 'includes/signup_view.inc.php';
 
 // theme-toggle stuff
 $isDarkMode = isset($_COOKIE["isDarkMode"]) ? $_COOKIE["isDarkMode"] === "1" : true;
