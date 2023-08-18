@@ -59,6 +59,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Query Failed: " . $e->getMessage());
     }
 } else {
-    header("Location: ../index.php?page=home");
-    die();
+    require_once 'config_session.inc.php';
+    if (isset($_SESSION["user_id"])) {
+        header("Location: ./index.php?page=dashboard");
+    }
+
+    // header("Location: ../index.php?page=home");
+    // die();
 }

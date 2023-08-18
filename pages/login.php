@@ -1,5 +1,6 @@
 <?php
 require_once 'includes/login_view.inc.php';
+include 'includes/login.inc.php';
 ?>
 
 <!DOCTYPE html>
