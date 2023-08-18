@@ -40,13 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $session_id = $new_session_id . "_" . $result["id"];
         session_id($session_id);
 
-        $_SESSION['user_data'] = $result;
-
-        $_SESSION["user_id"] = $_SESSION['user_data']["employee_id"];
-        $_SESSION["user_username"] = htmlspecialchars($_SESSION['user_data']["username"]);
-        $_SESSION['user_email'] = $_SESSION['user_data']['email'];
-        $_SESSION['user_hourly_rate'] = $_SESSION['user_data']['hourly_rate'];
-
+        $_SESSION["user_id"] = $result["id"];
+        $_SESSION["user_username"] = htmlspecialchars($result["username"]);
 
         $_SESSION["last_regeneration"] = time();
 
@@ -59,6 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("Query Failed: " . $e->getMessage());
     }
 } else {
-    header("Location: ../index.php?page=home");
+    header("Location: ../index.php?page=home.php");
     die();
 }

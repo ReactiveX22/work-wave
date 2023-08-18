@@ -6,30 +6,3 @@
   justify-content: center;
   height: 100vh;
 }
-.card_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.card {
-  background-color: var(--primary-background-color);
-  color: var(--primary-text-color);
-  border: 2px solid var(--primary-text-color);
-  border-radius: 5px;
-  display: flex;
-  align-items: left;
-  justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.card p {
-  font-weight: 900;
-  font-size: 40px;
-}
-
-.rate {
-  display: inline-flex;
-}
