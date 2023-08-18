@@ -34,8 +34,6 @@
 }
 
 .nav-link {
-  font-weight: 400;
-  font-size: auto;
   display: flex;
   align-items: center;
   height: 4rem;

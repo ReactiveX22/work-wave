@@ -1,5 +1,5 @@
 <header>
-    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/sidebar.css?v=1">
 </header>
 <nav class="sidebar">
     <ul class="sidebar-nav">
@@ -11,8 +11,15 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
-                <i class="fa-solid fa-user"></i>
+                <i class="fa-regular fa-user"></i>
                 <span class="link-text">Profile</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <!-- <i class="fa-regular fa-credit-card"></i> -->
+                <i class="fa-regular fa-user"></i>
+                <span class="link-text">Payments</span>
             </a>
         </li>
         <li class="nav-item">
