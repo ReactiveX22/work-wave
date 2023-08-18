@@ -7,7 +7,7 @@ $isDarkMode = isset($_COOKIE["isDarkMode"]) ? $_COOKIE["isDarkMode"] === "1" : t
 // routing
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-$validPages = ['home', 'login', 'signup', 'errors'];
+$validPages = ['home', 'login', 'signup', 'dashboard'];
 
 if (!in_array($page, $validPages)) {
     $page = 'home';

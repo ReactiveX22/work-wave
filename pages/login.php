@@ -1,3 +1,7 @@
+<?php
+require_once 'includes/login_view.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,6 +37,7 @@
                 <button>login</button>
             </form>
         </div>
+        <?php check_login_errors(); ?>
     </section>
 
 </body>

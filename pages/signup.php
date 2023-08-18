@@ -53,7 +53,7 @@ require_once 'includes/signup_view.inc.php';
         </div>
 
         <?php check_signup_errors(); ?>
-        </div>
+
     </section>
 
     <!-- TODO separate this! -->
