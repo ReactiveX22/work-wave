@@ -22,7 +22,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-size: 84px;
-  animation: fadeinH1 0.5s ease-in-out;
+  animation: fadeinH1 0.5s ease;
 }
 
 .words {
@@ -38,22 +38,23 @@
 .words .and p {
   font-weight: 400;
   font-size: 22px;
-  animation: fadeinH1 0.5s ease-in-out;
+  animation: fadeinH1 0.5s ease;
   margin: 5px;
 }
 
-.words .track {
+/* hover effect */
+.boost {
+  opacity: 0.1;
+  transition: opacity 0.5s ease;
+}
+
+.track {
   opacity: 1;
-  transition: opacity 0.5s;
+  transition: opacity 0.5s ease;
 }
 
 .words:hover .track {
   opacity: 0.1;
-}
-
-.words .boost {
-  opacity: 0.1;
-  transition: opacity 0.5s;
 }
 
 .words:hover .boost {
@@ -70,7 +71,7 @@
   font-weight: 300;
   font-size: 16px;
   margin: 15px 0px;
-  animation: fadeinH1 0.6s ease-in-out;
+  animation: fadeinH1 0.6s ease;
 }
 
 .login-signup {

@@ -13,15 +13,27 @@ if (!in_array($page, $validPages)) {
     $page = 'home';
 }
 
+if ($page === 'dashboard') {
+    // header
+    include_once 'includes/header_dashboard.php';
+    include_once 'includes/sidebar.php';
 
-// header
-include_once 'includes/header.php';
+    // main page
+    include_once 'pages/' . $page . '.php';
 
-// main page
-include_once 'pages/' . $page . '.php';
+    // footer
+    // scripts
+    include_once 'scripts/theme-toggle.php';
+} else {
+    // header
+    include_once 'includes/header.php';
 
-// footer
-include_once 'includes/footer.php';
+    // main page
+    include_once 'pages/' . $page . '.php';
 
-// scripts
-include_once 'scripts/theme-toggle.php';
+    // footer
+    include_once 'includes/footer.php';
+
+    // scripts
+    include_once 'scripts/theme-toggle.php';
+}

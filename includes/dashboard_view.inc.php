@@ -8,7 +8,7 @@ function show_hourly_rate()
 
         $hourly_rate = $_SESSION["user_hourly_rate"];
 
-        echo '<p>' . $hourly_rate . '</p>';
+        echo '<p class="amount_num">' . $hourly_rate . '</p>';
     }
 }
 
@@ -28,7 +28,7 @@ function show_worked_hours()
 
         $total_worked_hours = $_SESSION["employee_total_worked_hours"];
 
-        echo '<p>' . $total_worked_hours . '</p>';
+        echo '<p class="amount_num">' . $total_worked_hours . '</p>';
     }
 }
 function show_balance()
@@ -37,6 +37,6 @@ function show_balance()
 
         $balance = $_SESSION["employee_balance"];
 
-        echo '<p>' . number_format((float)$balance, 2, ".", ",") . '</p>';
+        echo '<p class="amount_num">' . number_format((float)$balance, 2, ".", ",") . '</p>';
     }
 }

@@ -6,8 +6,6 @@
 }
 
 .nav_header {
-  margin-left: 5rem;
-
   position: absolute;
   background-color: var(--primary-text-color);
   color: var(--primary-background-color);

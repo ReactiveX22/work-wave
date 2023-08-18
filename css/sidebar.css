@@ -1,0 +1,74 @@
+@import url("common.css");
+
+.sidebar {
+  width: 3.5rem;
+  height: 100%;
+  position: fixed;
+  margin-top: 2.35rem;
+  background-color: var(--primary-background-color);
+  transition: width 600ms ease;
+}
+
+.sidebar:hover {
+  width: 10rem;
+}
+
+.sidebar-nav {
+  border-radius: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  box-shadow: 0px 0px 10px var(--primary-text-color);
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: 29rem;
+}
+
+.nav-link {
+  font-weight: 400;
+  font-size: auto;
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  color: var(--primary-text-color);
+  text-decoration: none;
+  filter: var(--primary-text-color) opacity(0.7);
+  transition: 600ms ease;
+}
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--primary-text-color);
+  color: var(--primary-background-color);
+}
+
+.nav-link i {
+  width: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1rem;
+}
+
+.link-text {
+  opacity: 0;
+  font-size: 0px;
+  transition: opacity 0.4s ease, font-size 0.4s ease;
+}
+
+.sidebar:hover .link-text {
+  opacity: 1;
+  font-size: 1rem;
+}
+
+.nav-item .nav-link form {
+  width: 0;
+}
