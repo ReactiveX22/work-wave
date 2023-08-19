@@ -1,0 +1,27 @@
+.chart_container {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  margin: 2rem;
+  background-color: var(--primary-backgroun-color);
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px var(--primary-text-color);
+  width: 700px;
+  animation: fadeinchart 0.7s ease-in-out;
+  transition: box-shadow 200ms ease;
+}
+
+.chart_container:hover {
+  box-shadow: 0px 0px 8px var(--primary-text-color);
+}
+
+@keyframes fadeinchart {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

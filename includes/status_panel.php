@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="css/status_bar.css?v=1">
+    <link rel="stylesheet" href="css/status_bar.css">
 </head>
 
 <div class="main_container_status_bar">

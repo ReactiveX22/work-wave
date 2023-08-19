@@ -1,0 +1,109 @@
+.main-content {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 1rem;
+  background-color: var(--primary-background-color);
+}
+
+.login__box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 400px;
+  width: 400px;
+  border-radius: 10px;
+  background-color: var(--primary-background-color);
+  box-shadow: 0px 0px 10px var(--primary-text-color);
+  animation: fadein 0.6s ease-in-out;
+}
+
+.title_text {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 3%;
+}
+
+h4 {
+  margin: 10px;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.custom-num input {
+  width: 105;
+  max-width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 100px;
+  font-weight: 300;
+  padding: 10px;
+  color: var(--primary-text-color);
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px var(--primary-text-color);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+input {
+  /* Reset default styles */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Remove arrow buttons */
+  /* Target the pseudo-elements of the input */
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+input:hover {
+  box-shadow: 0px 0px 8px var(--primary-text-color);
+}
+
+button {
+  position: absolute;
+  bottom: 30px;
+  width: 50%;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--primary-background-color);
+  background-color: var(--primary-text-color);
+  box-shadow: 0px 0px 0px var(--primary-text-color);
+  transition: box-shadow 0.3s ease-in-out;
+  border: none;
+  border-radius: 3px;
+}
+
+button:hover {
+  box-shadow: 0px 0px 8px var(--primary-text-color);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

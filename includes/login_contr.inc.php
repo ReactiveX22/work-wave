@@ -12,7 +12,6 @@ function is_input_empty(string $username, string $password)
     }
 }
 
-
 function is_username_wrong(bool|array $result)
 {
     if (!$result) {

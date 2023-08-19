@@ -31,6 +31,7 @@ function show_worked_hours()
         echo '<p class="amount_num">' . $total_worked_hours . '</p>';
     }
 }
+
 function show_balance()
 {
     if (isset($_SESSION["employee_balance"])) {

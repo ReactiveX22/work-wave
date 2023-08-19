@@ -7,13 +7,14 @@ $isDarkMode = isset($_COOKIE["isDarkMode"]) ? $_COOKIE["isDarkMode"] === "1" : t
 // routing
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-$validPages = ['home', 'login', 'signup', 'dashboard'];
+$validPages = ['home', 'login', 'signup'];
+$validDashboardPages = ['work', 'dashboard'];
 
-if (!in_array($page, $validPages)) {
+if (!in_array($page, $validPages) && !in_array($page, $validDashboardPages)) {
     $page = 'home';
 }
 
-if ($page === 'dashboard') {
+if (in_array($page, $validDashboardPages)) {
     // header
     include_once 'includes/header_dashboard.php';
     include_once 'includes/sidebar.php';
@@ -21,7 +22,6 @@ if ($page === 'dashboard') {
     // main page
     include_once 'pages/' . $page . '.php';
 
-    // footer
     // scripts
     include_once 'scripts/theme-toggle.php';
 } else {

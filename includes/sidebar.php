@@ -1,10 +1,10 @@
 <header>
-    <link rel="stylesheet" href="css/sidebar.css?v=1">
+    <link rel="stylesheet" href="css/sidebar.css?v=<?php echo time(); ?>">
 </header>
 <nav class="sidebar">
     <ul class="sidebar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="index.php?page=dashboard">
                 <i class="fa-solid fa-chart-line"></i>
                 <span class="link-text">Dashboard</span>
             </a>
@@ -13,6 +13,12 @@
             <a class="nav-link" href="#">
                 <i class="fa-regular fa-user"></i>
                 <span class="link-text">Profile</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="index.php?page=work">
+                <i class="fa-brands fa-creative-commons-nd"></i>
+                <span class="link-text">Work</span>
             </a>
         </li>
         <li class="nav-item">

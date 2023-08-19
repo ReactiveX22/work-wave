@@ -31,9 +31,11 @@ h2 {
 
   margin: 10px 0;
 }
+
 a {
   color: var(--primary-text-color);
 }
+
 .input__box {
   display: flex;
   align-items: left;
