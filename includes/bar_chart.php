@@ -12,6 +12,8 @@
             var data = <?php echo get_days_and_worked_hours_arrays($pdo, $employee_id); ?>;
             var days = data[0];
             var workedHours = data[1];
+            console.log(days);
+            console.log(data);
 
             // Create the bar chart
             var ctx = document.getElementById('myChart').getContext('2d');
@@ -23,8 +25,13 @@
                         label: 'Worked Hours',
                         data: workedHours,
                         backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
+                        borderColor: 'rgba(75, 192, 192, 0.6)',
+                        hoverBackgroundColor: '#97EA96',
+                        hoverBorderColor: '#97EA96',
+                        borderWidth: 1,
+                        minBarLength: 2,
+                        barThickness: 50,
+
                     }]
                 },
                 options: {
@@ -49,8 +56,7 @@
                             },
                             grid: {
                                 display: false
-                            }
-
+                            },
                         }
                     },
                     plugins: {

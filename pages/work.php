@@ -21,8 +21,11 @@
                 <h4>add work hours</h4>
             </div>
             <form action="./includes/work_session.inc.php" method="post" enctype="multipart/form-data">
-                <div class="custom-num">
-                    <input type="number" class="num-input" name="hours" min="0" max="10" value="0">
+                <div class="amounts_container">
+                    <input type="radio" id="duration_1" name="hour_amount" value="1hr">
+                    <label for="duration_1">1Hr</label>
+                    <input type="radio" id="duration_10" name="hour_amount" value="10hr">
+                    <label for="duration_10">10Hr</label>
                 </div>
                 <button>add hours</button>
             </form>

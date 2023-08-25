@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  top: 3%;
+  top: 10%;
 }
 
 h4 {
@@ -41,44 +41,35 @@ h4 {
   font-size: 20px;
 }
 
-.custom-num input {
-  width: 105;
-  max-width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 100px;
-  font-weight: 300;
-  padding: 10px;
-  color: var(--primary-text-color);
-  border-radius: 10px;
-  box-shadow: 0px 0px 0px var(--primary-text-color);
-  transition: box-shadow 0.2s ease-in-out;
-}
-
-input {
-  /* Reset default styles */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-  /* Remove arrow buttons */
-  /* Target the pseudo-elements of the input */
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-}
-
 form {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-input:hover {
-  box-shadow: 0px 0px 8px var(--primary-text-color);
+.amounts_container {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+label {
+  padding: 10px 20px;
+  background-color: var(--primary-text-color);
+  color: var(--primary-background-color);
+  font-style: normal;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="radio"]:checked + label {
+  background-color: var(--primary-blue-color);
+  color: var(--primary-text-color);
 }
 
 button {

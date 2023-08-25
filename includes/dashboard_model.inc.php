@@ -58,12 +58,37 @@ function get_worked_hours_array(object $pdo, $employee_id)
     return $workedHoursArray;
 }
 
+function getLast7Days()
+{
+    // Get today's date
+    $today = date("M d", time());
+
+    // Create an array to store the last 7 days
+    $last7Days = [];
+
+    // Iterate backwards from today to get the last 7 days
+    for ($i = 0; $i < 7; $i++) {
+        $day = date('M d', strtotime("-$i day"));
+        $last7Days[] = $day;
+    }
+
+    return array_reverse($last7Days);
+}
+
 function get_days_and_worked_hours_arrays(object $pdo, $employee_id)
 {
+    // Step 1: Create an array of the last 7 days
+    $last7Days = getLast7Days();
+
+    // Initialize the output arrays
+    $days = [];
+    $workedHours = [];
+
+    // Step 2: Retrieve the data from the database for the last 7 days
     $query = "SELECT DATE(end_timestamp) AS day, SUM(worked_hours) AS total_worked_hours
-          FROM work_sessions
-          WHERE employee_id = :employee_id AND end_timestamp >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)
-          GROUP BY day";
+              FROM work_sessions
+              WHERE employee_id = :employee_id AND end_timestamp >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)
+              GROUP BY day";
 
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":employee_id", $employee_id);
@@ -71,15 +96,25 @@ function get_days_and_worked_hours_arrays(object $pdo, $employee_id)
 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $days = array();
-    $workedHours = array();
+    // Step 3: Iterate over the last 7 days array and assign the corresponding worked hours value
+    foreach ($last7Days as $day) {
+        $matched = false;
 
-    foreach ($results as $row) {
-        $day = date('M d', strtotime($row['day']));
-        $totalWorkedHours = $row['total_worked_hours'];
-        $days[] = $day;
-        $workedHours[] = $totalWorkedHours;
+        foreach ($results as $row) {
+            if (date('M d', strtotime($row['day'])) === $day) {
+                $days[] = $day;
+                $workedHours[] = $row['total_worked_hours'];
+                $matched = true;
+                break;
+            }
+        }
+
+        if (!$matched) {
+            $days[] = $day;
+            $workedHours[] = 0;
+        }
     }
 
+    // Step 4: Return the modified array as a JSON-encoded string
     return json_encode(array($days, $workedHours));
 }
