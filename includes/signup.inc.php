@@ -5,12 +5,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
     $email = $_POST["email"];
+    $profile_pic_file = $_FILES["prfl-pic"];
 
-    if (!empty($_FILES["prfl-pic"])) {
-        $profile_pic_file = $_FILES["prfl-pic"];
-    } else {
-        $profile_pic_file = [];
-    }
+    // if (!empty($_FILES["prfl-pic"])) {
+    //     $profile_pic_file = $_FILES["prfl-pic"];
+    // } else {
+    //     $profile_pic_file = [];
+    // }
 
     try {
         require_once 'db-handler.php';
@@ -57,6 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // user
         create_user($pdo, $username, $password, $email, $profile_pic_file);
+
+
         header("Location: ../index.php?page=signup&signup=success");
         die();
 

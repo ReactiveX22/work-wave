@@ -1,0 +1,38 @@
+.main-content {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile_container {
+  margin-top: 2rem;
+  height: 600px;
+  width: 900px;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  border: 1px solid var(--primary-text-color);
+  border-radius: 5px;
+}
+
+.profile_pic_container {
+  margin: 2rem;
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  border: 1px solid var(--primary-text-color);
+  border-radius: 5px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}

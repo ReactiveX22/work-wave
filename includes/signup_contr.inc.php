@@ -42,20 +42,15 @@ function is_email_registered(object $pdo, string $email)
 
 function create_user(object $pdo, string $username, string $password, string $email, $profile_pic_file)
 {
-    $image_path = rename_file($profile_pic_file, $username);
+    $image_name = rename_file($profile_pic_file, $username);
+    $imageSavePath = '../profile_pics/' . $image_name;
 
-    set_user($pdo, $username, $password, $email, $image_path);
+    set_user($pdo, $username, $password, $email, $image_name);
+    move_uploaded_file($profile_pic_file['tmp_name'], $imageSavePath);
 }
 
 
 // profile-pic handling
-
-function get_file_name($file)
-{
-    if (!empty($file)) {
-        return $file['name'];
-    }
-}
 
 function is_file_size_too_big($file)
 {
@@ -71,7 +66,7 @@ function is_file_size_too_big($file)
 function get_actual_filetype($file)
 {
     if (!empty($file)) {
-        $file_name = get_file_name($file);
+        $file_name = $file['name'];
 
         $file_ext = explode('.', $file_name);
         return $file_actual_ext = strtolower(end($file_ext));

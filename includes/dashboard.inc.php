@@ -19,7 +19,6 @@ try {
     $work_sessions = get_work_sessions($pdo, $employee_id);
 
     $worked_hours = get_worked_hours_array($pdo, $employee_id);
-    $hours = [1, 2, 3, 4, 5];
 } catch (PDOException $e) {
     die("Query Failed: " . $e->getMessage());
 }

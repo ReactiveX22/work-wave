@@ -46,6 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["user_username"] = htmlspecialchars($_SESSION['user_data']["username"]);
         $_SESSION['user_email'] = $_SESSION['user_data']['email'];
         $_SESSION['user_hourly_rate'] = $_SESSION['user_data']['hourly_rate'];
+        $_SESSION["employee_profile_pic"] = $_SESSION['user_data']["image_path"];
+
 
 
         $_SESSION["last_regeneration"] = time();

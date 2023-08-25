@@ -10,7 +10,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="index.php?page=profile">
                 <i class="fa-regular fa-user"></i>
                 <span class="link-text">Profile</span>
             </a>
@@ -23,6 +23,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">
+                <!-- TODO fix icons -->
                 <!-- <i class="fa-regular fa-credit-card"></i> -->
                 <i class="fa-regular fa-user"></i>
                 <span class="link-text">Payments</span>
