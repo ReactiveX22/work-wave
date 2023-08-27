@@ -38,7 +38,4 @@ function set_user(object $pdo, string $username, string $password, string $email
     $stmt->bindParam(":image_path", $image_path);
 
     $stmt->execute();
-
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result;
 }

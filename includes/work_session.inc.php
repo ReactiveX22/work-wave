@@ -13,23 +13,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once '../includes/config_session.inc.php';
         $employee_id = $_SESSION["user_id"];
 
-
-        if (empty($hours)) {
-            $errors["empty_input"] = "Fill in all fields!";
-        } else {
-            if ($hours === "1hr") {
-                $new_work_session_id = set_work_session($pdo, $employee_id);
-                update_work_session($pdo, $new_work_session_id, 1);
-            } elseif ($hours === "10hr") {
-                $new_work_session_id = set_work_session($pdo, $employee_id);
-                update_work_session($pdo, $new_work_session_id, 10);
-            }
+        //TODO: Optimize this
+        if ($hours === "1hr") {
+            $new_work_session_id = set_work_session($pdo, $employee_id);
+            update_work_session($pdo, $new_work_session_id, 1);
+            $errors["added-1hrs"] = "Added 1 Worked Hour";
+        } elseif ($hours === "10hr") {
+            $new_work_session_id = set_work_session($pdo, $employee_id);
+            update_work_session($pdo, $new_work_session_id, 10);
+            $errors["added-10hrs"] = "Added 10 Worked Hours";
+        } elseif ($hours === "-1hr") {
+            $new_work_session_id = set_work_session($pdo, $employee_id);
+            update_work_session($pdo, $new_work_session_id, -1);
+            $errors["removed-1hrs"] = "Removed 1 Worked Hour";
+        } elseif ($hours === "-10hr") {
+            $new_work_session_id = set_work_session($pdo, $employee_id);
+            update_work_session($pdo, $new_work_session_id, -10);
+            $errors["removed-10hrs"] = "Removed 10 Worked Hours";
         }
 
         if ($errors) {
-            $_SESSION['errors_login'] = $errors;
+            $_SESSION['errors_add_work_hours'] = $errors;
 
-            header("Location: ../index.php?page=dashboard");
+            header("Location: ../index.php?page=work");
             die();
         }
 
