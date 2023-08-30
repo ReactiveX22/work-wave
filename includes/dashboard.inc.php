@@ -10,11 +10,12 @@ try {
 
     $employee_id = $_SESSION['user_data']['employee_id'];
 
-    $total_work_sessions = get_total_work_sessions($pdo, $employee_id);
+    $total_worked_hours = get_total_worked_hours($pdo, $employee_id);
     $balance = get_balance($pdo, $employee_id);
 
-    $_SESSION["employee_total_worked_hours"] = $total_work_sessions["total_worked_hours"];
-    $_SESSION["employee_balance"] = $balance["balance"];
+    $_SESSION["employee_total_worked_hours"] = isset($total_worked_hours) ? $total_worked_hours : 0;
+    $_SESSION["employee_balance"] = isset($balance) ? $balance : 0;
+
 
     $work_sessions = get_work_sessions($pdo, $employee_id);
 

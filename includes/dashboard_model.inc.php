@@ -3,7 +3,7 @@
 // type declaration
 declare(strict_types=1);
 
-function get_total_work_sessions(object $pdo, $employee_id)
+function get_total_worked_hours(object $pdo, $employee_id)
 {
     $query = "SELECT employee_id, SUM(worked_hours) AS total_worked_hours FROM work_sessions WHERE employee_id = :employee_id GROUP BY employee_id;";
 
@@ -11,8 +11,12 @@ function get_total_work_sessions(object $pdo, $employee_id)
     $stmt->bindParam(":employee_id", $employee_id);
     $stmt->execute();
 
+    if ($stmt->rowCount() == 0) {
+        return 0;
+    }
+
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result;
+    return $result['total_worked_hours'];
 }
 
 function get_work_sessions(object $pdo, $employee_id)
@@ -36,7 +40,12 @@ function get_balance(object $pdo, $employee_id)
     $stmt->execute();
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result;
+
+    if (!$result) {
+        return 0;
+    }
+
+    return $result["balance"];
 }
 
 function get_worked_hours_array(object $pdo, $employee_id)
