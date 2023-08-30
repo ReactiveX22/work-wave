@@ -15,6 +15,18 @@
             <div class="profile_pic_container">
                 <?php echo '<img src="profile_pics/' . $_SESSION["employee_profile_pic"] . '" alt="Profile Picture">' ?>
             </div>
+            <div class="profile_details">
+                <table class="profile_details_table">
+                    <tr>
+                        <td>Username:</td>
+                        <td><?php echo $_SESSION["user_username"] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td><?php echo $_SESSION["user_email"] ?></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </main>
 </body>

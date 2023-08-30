@@ -8,7 +8,7 @@ $isDarkMode = isset($_COOKIE["isDarkMode"]) ? $_COOKIE["isDarkMode"] === "1" : t
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 $validPages = ['home', 'login', 'signup'];
-$validDashboardPages = ['work', 'dashboard', 'profile'];
+$validDashboardPages = ['work', 'dashboard', 'profile', 'settings'];
 
 if (!in_array($page, $validPages) && !in_array($page, $validDashboardPages)) {
     $page = 'home';
