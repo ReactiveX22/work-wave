@@ -22,7 +22,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.php?page=work">
+            <a class="nav-link" href="index.php?page=request_payments">
                 <i class="fa-solid fa-hand-holding-dollar"></i>
                 <span class="link-text">Payments</span>
             </a>
@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li class="nav-sub-item">
-                    <a class="nav-sub-link" href="index.php?page=settings">
+                    <a class="nav-sub-link" href="index.php?page=request_role">
                         <i class="fa-solid fa-user-gear"></i>
                         <span class="sub-link-text">Request Role</span>
                     </a>

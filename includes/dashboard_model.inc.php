@@ -48,6 +48,19 @@ function get_balance(object $pdo, $employee_id)
     return $result["balance"];
 }
 
+function get_user_total_pending_balance(object $pdo, $user_id)
+{
+    $query = "SELECT user_id, SUM(pending_amount) AS total_pending_balances FROM pending_balances WHERE user_id = :user_id AND is_pending = '1' GROUP BY user_id;";
+
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":user_id", $user_id);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['total_pending_balances'];
+}
+
+
 function get_worked_hours_array(object $pdo, $employee_id)
 {
     $query = "SELECT * FROM work_sessions WHERE employee_id = :employee_id ORDER BY start_timestamp;";

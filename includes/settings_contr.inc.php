@@ -3,13 +3,14 @@
 // type declaration
 declare(strict_types=1);
 
-function is_input_empty(string $old_password, string $new_password, string $confirm_password)
+function is_input_empty(...$inputs)
 {
-    if (empty($old_password) || empty($new_password) || empty($confirm_password)) {
-        return true;
-    } else {
-        return false;
+    foreach ($inputs as $input) {
+        if (empty($input)) {
+            return true;
+        }
     }
+    return false;
 }
 
 function is_password_wrong(string $password_from_user, $password_from_db)

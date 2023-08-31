@@ -26,5 +26,12 @@
                 <p class="amount_unit">&#2547</p>
             </div>
         </div>
+        <div class="card">
+            <div class="title">pending balance</div>
+            <div class="amount_box">
+                <?php show_pending_balance() ?>
+                <p class="amount_unit">&#2547</p>
+            </div>
+        </div>
     </div>
 </div>

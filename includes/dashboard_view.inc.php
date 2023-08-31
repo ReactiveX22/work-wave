@@ -41,3 +41,13 @@ function show_balance()
         echo '<p class="amount_num">' . number_format((float)$balance, 2, ".", ",") . '</p>';
     }
 }
+
+function show_pending_balance()
+{
+    if (isset($_SESSION["employee_pending_balance"])) {
+
+        $pending_balance = $_SESSION["employee_pending_balance"];
+
+        echo '<p class="amount_num">' . number_format((float)$pending_balance, 2, ".", ",") . '</p>';
+    }
+}
