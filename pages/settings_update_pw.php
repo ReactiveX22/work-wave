@@ -19,7 +19,7 @@ require_once 'includes/settings_view.inc.php';
             <h2>Update Password</h2>
             <div class="profile_details">
                 <div class="form_box">
-                    <form id="form1" action="./includes/settings.inc.php" method="post" enctype="multipart/form-data">
+                    <form id="form1" action="./includes/settings_update_pw.inc.php" method="post" enctype="multipart/form-data">
                         <div class="input__box">
                             <label for="old_password">Old Password</label>
                             <input type="password" name="old_password" id="old_password" autofocus>

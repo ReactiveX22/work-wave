@@ -59,7 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // user
         create_user($pdo, $username, $password, $email, $profile_pic_file);
 
-
         header("Location: ../index.php?page=signup&signup=success");
         die();
 

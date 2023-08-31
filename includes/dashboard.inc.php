@@ -8,7 +8,7 @@ try {
 
     require_once 'config_session.inc.php';
 
-    $employee_id = $_SESSION['user_data']['employee_id'];
+    $employee_id = $_SESSION['user_data']['user_id'];
 
     $total_worked_hours = get_total_worked_hours($pdo, $employee_id);
     $balance = get_balance($pdo, $employee_id);

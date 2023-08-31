@@ -8,7 +8,7 @@ try {
 
     require_once 'config_session.inc.php';
 
-    $employee_id = $_SESSION['user_data']['employee_id'];
+    $employee_id = $_SESSION['user_data']['user_id'];
 
     $profile_pic = $_SESSION["employee_profile_pic"];
 } catch (PDOException $e) {

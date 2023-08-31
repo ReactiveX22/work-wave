@@ -5,7 +5,7 @@
     <ul class="sidebar-nav">
         <li class="nav-item">
             <a class="nav-link" href="index.php?page=profile">
-                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-address-card fa-2xl"></i>
                 <span class="link-text">Profile</span>
             </a>
         </li>
@@ -27,12 +27,27 @@
                 <span class="link-text">Payments</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="index.php?page=settings">
+        <li class="nav-item" id="settings">
+            <a class="nav-link" href="#">
                 <i class="fa-solid fa-gear"></i>
                 <span class="link-text">Settings</span>
             </a>
+            <ul class="nav-sub">
+                <li class="nav-sub-item">
+                    <a class="nav-sub-link" href="index.php?page=settings_update_pw">
+                        <i class="fa-solid fa-key"></i>
+                        <span class="sub-link-text">Update Password</span>
+                    </a>
+                </li>
+                <li class="nav-sub-item">
+                    <a class="nav-sub-link" href="index.php?page=settings">
+                        <i class="fa-solid fa-user-gear"></i>
+                        <span class="sub-link-text">Request Role</span>
+                    </a>
+                </li>
+            </ul>
         </li>
+
         <li class="nav-item">
             <a class="nav-link" href="#" onclick="document.getElementById('logout').submit();">
                 <i class="fa-solid fa-right-from-bracket"></i>

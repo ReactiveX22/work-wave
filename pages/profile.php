@@ -25,6 +25,10 @@
                         <td>Email:</td>
                         <td><?php echo $_SESSION["user_email"] ?></td>
                     </tr>
+                    <tr>
+                        <td>Role:</td>
+                        <td><?php echo $_SESSION["user_role"] ?></td>
+                    </tr>
                 </table>
             </div>
         </div>

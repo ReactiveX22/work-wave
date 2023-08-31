@@ -33,14 +33,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($errors) {
             $_SESSION['errors_login'] = $errors;
 
-            header("Location: ../index.php?page=settings");
+            header("Location: ../index.php?page=settings_update_pw");
             die();
         } else {
             change_password($pdo, $_SESSION["user_id"], $new_password);
             $_SESSION['password_changed'] = "Password is changed";
         }
 
-        header("Location: ../index.php?page=settings");
+        header("Location: ../index.php?page=settings_update_pw");
         $pdo = null;
         $stmt = null;
 
