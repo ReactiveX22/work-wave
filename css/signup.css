@@ -23,7 +23,7 @@ h2 {
   justify-content: center;
   min-height: 600px;
   width: 400px;
-  border-radius: 3px;
+  border-radius: 0.6rem;
   background-color: var(--primary-background-color);
   box-shadow: 0px 0px 10px var(--primary-text-color);
   animation: fadein 0.6s ease-in-out;
@@ -121,7 +121,7 @@ button {
   box-shadow: 0px 0px 0px var(--primary-text-color);
   transition: box-shadow 0.3s ease-in-out;
   border: none;
-  border-radius: 3px;
+  border-radius: 0.3rem;
 }
 
 button:hover {

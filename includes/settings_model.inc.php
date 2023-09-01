@@ -102,7 +102,6 @@ function get_user_pending_role_id(object $pdo, $user_id)
     }
 }
 
-
 function get_user_total_pending_balance(object $pdo, $user_id)
 {
     $query = "SELECT user_id, SUM(pending_amount) AS total_pending_balances FROM pending_balances WHERE user_id = :user_id AND is_pending = '1' GROUP BY user_id;";
@@ -126,4 +125,16 @@ function set_pending_balance(object $pdo, string $user_id, $pending_amount)
     $stmt->bindParam(":pending_amount", $pending_amount);
 
     $stmt->execute();
+}
+
+function get_total_nof_pb_req(object $pdo, $user_id)
+{
+    $query = "SELECT COUNT(pending_amount) AS no_of_pb_req FROM pending_balances WHERE user_id = :user_id;";
+
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":user_id", $user_id);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['no_of_pb_req'];
 }

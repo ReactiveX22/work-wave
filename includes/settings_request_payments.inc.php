@@ -42,12 +42,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } catch (PDOException $e) {
         die("Query Failed: " . $e->getMessage());
     }
-} else {
-    require_once 'config_session.inc.php';
-    if (isset($_SESSION["user_id"])) {
-        header("Location: ./index.php?page=dashboard");
-    }
+}
 
-    // header("Location: ../index.php?page=home");
-    // die();
+try {
+    require_once 'db-handler.php';
+    require_once 'settings_model.inc.php';
+    require_once 'config_session.inc.php';
+
+
+    $user_id = $_SESSION["user_id"];
+    $_SESSION["employee_pending_balance"] = get_user_total_pending_balance($pdo, $user_id);
+    $_SESSION["no_of_pb_req"] = get_total_nof_pb_req($pdo, $user_id);
+} catch (PDOException $e) {
+    die("Query Failed: " . $e->getMessage());
 }

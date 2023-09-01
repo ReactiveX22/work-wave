@@ -1,5 +1,6 @@
 <?php
-require_once 'includes/settings_view.inc.php';
+include 'includes/settings_request_payments.inc.php';
+include 'includes/settings_view.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +22,9 @@ require_once 'includes/settings_view.inc.php';
                 <div class="form_box">
                     <form id="form1" action="./includes/settings_request_payments.inc.php" method="post" enctype="multipart/form-data">
                         <div class="input__box">
-                            <label>Current Pending Balance: &#2547 <?php echo $_SESSION["employee_pending_balance"] ?></label>
-                            <label>Current Balance: &#2547 <?php echo $_SESSION["employee_balance"] ?></label>
+                            <label>No. Of Pending Requests: <?php echo $_SESSION["no_of_pb_req"] ?></label>
+                            <label>Pending Balance: &#2547 <?php echo $_SESSION["employee_pending_balance"] ?></label>
+                            <label>Balance: &#2547 <?php echo $_SESSION["employee_balance"] ?></label>
                             <br>
                             <label for="roles">Select Amount</label>
                             <div class="select-container">

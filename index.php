@@ -8,7 +8,7 @@ $isDarkMode = isset($_COOKIE["isDarkMode"]) ? $_COOKIE["isDarkMode"] === "1" : t
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 $validPages = ['home', 'login', 'signup'];
-$validDashboardPages = ['work', 'dashboard', 'profile', 'settings_update_pw', 'dashboard_sup', 'request_role', 'request_payments'];
+$validDashboardPages = ['work', 'dashboard', 'profile', 'settings_update_pw', 'dashboard_sup', 'request_role', 'request_payments', 'manage_payments'];
 
 if (!in_array($page, $validPages) && !in_array($page, $validDashboardPages)) {
     $page = 'home';
@@ -29,6 +29,8 @@ if (in_array($page, $validDashboardPages)) {
     }
 
     // main page
+
+    // dashboards
     if ($page === 'dashboard') {
         if ($_SESSION["user_role_id"] === 'SUP') {
             include_once 'pages/' . 'dashboard_sup' . '.php';
@@ -36,6 +38,14 @@ if (in_array($page, $validDashboardPages)) {
             include_once 'pages/' . 'dashboard_admin' . '.php';
         } elseif ($_SESSION["user_role_id"] === 'EMP') {
             include_once 'pages/' . 'dashboard_emp' . '.php';
+        }
+    } elseif ($page === 'work') {
+        if ($_SESSION["user_role_id"] === 'SUP') {
+            include_once 'pages/' . 'manage_payments' . '.php';
+        } elseif ($_SESSION["user_role_id"] === 'EMP') {
+            include_once 'pages/' . 'request_payments' . '.php';
+        } elseif ($_SESSION["user_role_id"] === 'ADM') {
+            include_once 'pages/' . 'request_payments' . '.php';
         }
     } else {
         include_once 'pages/' . $page . '.php';

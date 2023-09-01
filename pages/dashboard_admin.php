@@ -10,15 +10,21 @@ include 'includes/admin_view.inc.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" id="themeLink" type="text/css" href="./css/themes/dark.css">
-    <link rel="stylesheet" href="./css/dashboard_sup.css?v=<?php echo time(); ?>">
-    <title>Dashboard</title>
+    <link rel="stylesheet" href="./css/dashboard_admin.css?v=<?php echo time(); ?>">
+    <title>Dashboard | Admin</title>
 </head>
 
 <body>
-    <!-- main -->
     <main class="main-content">
         <div class="dashboard_container">
-            <div class="table-body">
+            <section class="table__header">
+                <h1>Employees</h1>
+                <div class="input-group">
+                    <input type="search" placeholder="Search Data...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </section>
+            <section class="table-body">
                 <table>
                     <thead>
                         <tr>
@@ -34,9 +40,10 @@ include 'includes/admin_view.inc.php';
                         <?php show_role_req_rows(); ?>
                     </tbody>
                 </table>
-            </div>
+            </section>
         </div>
     </main>
+    <?php include 'scripts/table-script.php'; ?>
 </body>
 
 </html>

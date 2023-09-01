@@ -6,7 +6,7 @@
 }
 
 .dashboard_container {
-  width: 75%;
+  width: 65%;
   height: 600px;
   /* display: flex;
   align-items: flex-start;
@@ -94,6 +94,7 @@ td img {
 
 .employees {
   text-align: left;
+  padding-left: 2rem;
 }
 
 table {
