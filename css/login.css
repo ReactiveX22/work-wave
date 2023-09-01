@@ -1,5 +1,9 @@
 @import url("common.css");
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 .login {
   display: flex;
   align-items: center;

@@ -22,6 +22,7 @@ require_once 'includes/settings_view.inc.php';
                     <form id="form1" action="./includes/settings_request_role.inc.php" method="post" enctype="multipart/form-data">
                         <div class="input__box">
                             <label>Current Role: <?php echo $_SESSION["user_role"] ?></label>
+                            <label>Role In Pending: <?php echo $_SESSION["user_pending_role"] ?></label>
                             <br>
                             <label for="roles">Select Role</label>
                             <!-- <input type="password" name="confirm_password" id="confirm_password"> -->

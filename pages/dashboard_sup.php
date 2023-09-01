@@ -1,4 +1,6 @@
 <?php
+include 'includes/employee_list.inc.php';
+include 'includes/employee_list_view.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -28,76 +30,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><?php echo '<img src="profile_pics/' . $_SESSION["employee_profile_pic"] . '" alt="Profile Picture">' ?>User01</td>
-                            <td>10.00</td>
-                            <td>35.00</td>
-                            <td>1000.00</td>
-                            <td>2500.00</td>
-                        </tr>
-                        <tr>
-                            <td><?php echo '<img src="profile_pics/' . $_SESSION["employee_profile_pic"] . '" alt="Profile Picture">' ?>User01</td>
-                            <td>10.00</td>
-                            <td>35.00</td>
-                            <td>1000.00</td>
-                            <td>2500.00</td>
-                        </tr>
-                        <tr>
-                            <td><?php echo '<img src="profile_pics/' . $_SESSION["employee_profile_pic"] . '" alt="Profile Picture">' ?>User01</td>
-                            <td>10.00</td>
-                            <td>35.00</td>
-                            <td>1000.00</td>
-                            <td>2500.00</td>
-                        </tr>
-                        <tr>
-                            <td><?php echo '<img src="profile_pics/' . $_SESSION["employee_profile_pic"] . '" alt="Profile Picture">' ?>User01</td>
-                            <td>10.00</td>
-                            <td>35.00</td>
-                            <td>1000.00</td>
-                            <td>2500.00</td>
-                        </tr>
-                        <tr>
-                            <td><?php echo '<img src="profile_pics/' . $_SESSION["employee_profile_pic"] . '" alt="Profile Picture">' ?>User01</td>
-                            <td>10.00</td>
-                            <td>35.00</td>
-                            <td>1000.00</td>
-                            <td>2500.00</td>
-                        </tr>
-                        <tr>
-                            <td><?php echo '<img src="profile_pics/' . $_SESSION["employee_profile_pic"] . '" alt="Profile Picture">' ?>User01</td>
-                            <td>10.00</td>
-                            <td>35.00</td>
-                            <td>1000.00</td>
-                            <td>2500.00</td>
-                        </tr>
-                        <tr>
-                            <td><?php echo '<img src="profile_pics/' . $_SESSION["employee_profile_pic"] . '" alt="Profile Picture">' ?>User01</td>
-                            <td>10.00</td>
-                            <td>35.00</td>
-                            <td>1000.00</td>
-                            <td>2500.00</td>
-                        </tr>
-                        <tr>
-                            <td><?php echo '<img src="profile_pics/' . $_SESSION["employee_profile_pic"] . '" alt="Profile Picture">' ?>User01</td>
-                            <td>10.00</td>
-                            <td>35.00</td>
-                            <td>1000.00</td>
-                            <td>2500.00</td>
-                        </tr>
-                        <tr>
-                            <td><?php echo '<img src="profile_pics/' . $_SESSION["employee_profile_pic"] . '" alt="Profile Picture">' ?>User01</td>
-                            <td>10.00</td>
-                            <td>35.00</td>
-                            <td>1000.00</td>
-                            <td>2500.00</td>
-                        </tr>
-                        <tr>
-                            <td><?php echo '<img src="profile_pics/' . $_SESSION["employee_profile_pic"] . '" alt="Profile Picture">' ?>User01</td>
-                            <td>10.00</td>
-                            <td>35.00</td>
-                            <td>1000.00</td>
-                            <td>2500.00</td>
-                        </tr>
+                        <?php show_employee_rows(); ?>
                     </tbody>
                 </table>
             </div>

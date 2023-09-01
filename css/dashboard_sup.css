@@ -42,6 +42,10 @@ td img {
   vertical-align: middle;
 }
 
+.employees {
+  text-align: left;
+}
+
 table {
   width: 100%;
 }
@@ -85,4 +89,35 @@ tbody tr:nth-child(even) {
 
 tbody tr:hover {
   background-color: #065fd445;
+}
+
+.status {
+  padding: 0.4rem 0;
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.approved {
+  background-color: #22c19749;
+  color: #2bffc6;
+}
+
+.pending {
+  background-color: #cce71937;
+  color: #ffc904;
+}
+
+button {
+  width: 100%;
+  min-height: 30px;
+  color: var(--primary-background-color);
+  background-color: var(--primary-text-color);
+  box-shadow: 0px 0px 0px var(--primary-text-color);
+  transition: box-shadow 0.3s ease-in-out;
+  border: none;
+  border-radius: 3px;
+}
+
+button:hover {
+  box-shadow: 0px 0px 8px var(--primary-text-color);
 }

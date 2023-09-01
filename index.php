@@ -28,7 +28,6 @@ if (in_array($page, $validDashboardPages)) {
         include_once 'includes/sidebar.php';
     }
 
-
     // main page
     if ($page === 'dashboard') {
         if ($_SESSION["user_role_id"] === 'SUP') {

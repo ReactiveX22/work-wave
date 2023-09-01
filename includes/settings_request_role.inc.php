@@ -27,11 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $role = 'ADM';
             }
 
+
             $result = get_user($pdo, $username);
             $current_role = get_user_role_id($pdo, $result["user_id"]);
+            $pending_role_id = get_user_pending_role_id($pdo, $result["user_id"]);
+            $_SESSION["user_pending_role"] = get_role_name($pdo, $pending_role_id);
+
 
             if ($role === $current_role) {
                 $errors["login_incorrect"] = "You already have the role.";
+            } elseif (is_user_has_req_role($pdo, $result["user_id"])) {
+                $errors["login_incorrect"] = "You already have requested a role.";
             }
         }
 
@@ -40,10 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: ../index.php?page=request_role");
             die();
         } else {
-            change_role($pdo, $_SESSION["user_id"], $role);
+            set_pending_req_role($pdo, $_SESSION["user_id"], $role);
             $_SESSION["user_role"] = get_user_role_name($pdo, $_SESSION["user_id"]);
             $_SESSION["user_role_id"] = get_user_role_id($pdo, $_SESSION["user_id"]);
-            $_SESSION['password_changed'] = "Your role is changed";
+            $_SESSION["user_pending_role"] = get_role_name($pdo, $pending_role_id);
+            $_SESSION['password_changed'] = "Your role is requested";
         }
 
         header("Location: ../index.php?page=request_role");

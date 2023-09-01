@@ -57,7 +57,7 @@ function get_user_total_pending_balance(object $pdo, $user_id)
     $stmt->execute();
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result['total_pending_balances'];
+    return $result;
 }
 
 
