@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["user_role_id"] = $user_role_id;
 
 
-        $pending_role_id = get_user_pending_role_id($pdo, $_SESSION["user_id"]);
+        $pending_role_id = get_user_pending_role_id($pdo, $user_id);
         $_SESSION["user_pending_role"] = get_role_name($pdo, $pending_role_id);
 
         $_SESSION["user_username"] = $_SESSION['user_data']["username"];

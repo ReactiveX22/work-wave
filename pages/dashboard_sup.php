@@ -18,7 +18,14 @@ include 'includes/employee_list_view.inc.php';
     <!-- main -->
     <main class="main-content">
         <div class="dashboard_container">
-            <div class="table-body">
+            <section class="table__header">
+                <h1>Employees</h1>
+                <div class="input-group">
+                    <input type="search" placeholder="Search Data...">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </section>
+            <section class="table-body">
                 <table>
                     <thead>
                         <tr>
@@ -33,9 +40,10 @@ include 'includes/employee_list_view.inc.php';
                         <?php show_employee_rows(); ?>
                     </tbody>
                 </table>
-            </div>
+            </section>
         </div>
     </main>
+    <?php include 'scripts/table-script.php'; ?>
 </body>
 
 </html>

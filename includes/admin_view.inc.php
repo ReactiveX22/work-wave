@@ -19,21 +19,31 @@ function show_role_req_rows()
                 echo '<td>' . ($role_req['requested_date'] ?? '0.00') . '</td>';
                 echo '<td><p class="status ' . ($role_req['is_pending'] == 0 ? 'approved' : 'pending') . '">' . ($role_req['is_pending'] == 0 ? 'Approved' : 'Pending') . '</p></td>';
                 echo '<td>';
+                echo '<div class="action-btn-container">';
                 echo '<form action="includes/admin.inc.php" method="post">';
                 echo '<input type="hidden" name="user_id" value="' . $role_req['user_id'] . '"/>';
                 echo '<input type="hidden" name="requested_role" value="' . $role_req['requested_role'] . '"/>';
-                echo '<button type="submit" name="submitButton">Approve</button>';
+                echo '<input type="hidden" name="action" value="approve"/>';
+                echo '<button class="action-btn approve-btn" type="submit" name="submitButton">Approve</button>';
+                echo '</form>';
+                echo '<form action="includes/admin.inc.php" method="post">';
+                echo '<input type="hidden" name="user_id" value="' . $role_req['user_id'] . '"/>';
+                echo '<input type="hidden" name="requested_role" value="' . $role_req['requested_role'] . '"/>';
+                echo '<input type="hidden" name="action" value="delete"/>';
+                echo '<button class="action-btn delete-btn" type="submit" name="submitButton">Delete</button>';
                 echo '</form>';
                 echo '</td>';
+                echo '</div>';
                 echo '</tr>';
             }
         } else {
             echo '<tr>';
-            echo '<td>' . '--' . '</td>';
-            echo '<td>' . '--' . '</td>';
-            echo '<td>' . '--' . '</td>';
-            echo '<td>' . '--' . '</td>';
-            echo '<td>' . '--' . '</td>';
+            echo '<td>' . '---' . '</td>';
+            echo '<td>' . '---' . '</td>';
+            echo '<td>' . '---' . '</td>';
+            echo '<td>' . '---' . '</td>';
+            echo '<td>' . '---' . '</td>';
+            echo '<td>' . '---' . '</td>';
             echo '</tr>';
         }
     }

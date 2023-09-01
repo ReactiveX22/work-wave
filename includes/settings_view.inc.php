@@ -3,6 +3,21 @@
 // type declaration
 declare(strict_types=1);
 
+try {
+    require_once 'db-handler.php';
+    require_once 'settings_model.inc.php';
+    require_once 'config_session.inc.php';
+
+    $employee_id = $_SESSION["user_id"];
+
+    $pending_role_id = get_user_pending_role_id($pdo, $employee_id);
+    $pending_role_name = get_role_name($pdo, $pending_role_id);
+
+    $_SESSION["user_pending_role"] = isset($pending_role_name) ? $pending_role_name : 'No Role';
+} catch (PDOException $e) {
+    die("Query Failed: " . $e->getMessage());
+}
+
 function check_login_errors()
 {
     if (isset($_SESSION['errors_login'])) {

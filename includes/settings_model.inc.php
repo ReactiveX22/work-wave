@@ -69,10 +69,13 @@ function get_role_name(object $pdo, $role_id)
     $stmt->execute();
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result["role_name"];
+
+    if (!empty($result)) {
+        return $result["role_name"];
+    }
 }
 
-function set_pending_req_role(object $pdo, string $user_id, $req_role)
+function set_pending_req_role(object $pdo, $user_id, $req_role)
 {
     $query = "INSERT INTO pending_role_reqs (user_id, requested_role, requested_date) VALUES (:user_id, :req_role, NOW());";
 
@@ -84,7 +87,7 @@ function set_pending_req_role(object $pdo, string $user_id, $req_role)
     $stmt->execute();
 }
 
-function get_user_pending_role_id(object $pdo, string $user_id)
+function get_user_pending_role_id(object $pdo, $user_id)
 {
     $query = "SELECT requested_role FROM pending_role_reqs WHERE user_id = :user_id;";
 
@@ -93,7 +96,10 @@ function get_user_pending_role_id(object $pdo, string $user_id)
     $stmt->execute();
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $result['requested_role'];
+
+    if (!empty($result)) {
+        return $result["requested_role"];
+    }
 }
 
 

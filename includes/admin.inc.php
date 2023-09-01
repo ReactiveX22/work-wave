@@ -3,6 +3,7 @@
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user_id = $_POST["user_id"];
     $requested_role = $_POST["requested_role"];
+    $action = $_POST["action"];
 
     try {
         require_once 'db-handler.php';
@@ -16,7 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (is_input_empty($user_id, $requested_role)) {
             $errors["empty_input"] = "Fill in all fields!";
         } else {
-            approve_role_request($pdo, $user_id, $requested_role);
+            if ($action === 'approve') {
+                approve_role_request($pdo, $user_id, $requested_role);
+            } elseif ($action === 'delete') {
+                delete_role_request($pdo, $user_id, $requested_role);
+            }
+
             $_SESSION['role_req_list'] = get_role_requests($pdo);
         }
 

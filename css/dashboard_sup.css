@@ -8,9 +8,9 @@
 .dashboard_container {
   width: 75%;
   height: 600px;
-  display: flex;
+  /* display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: center; */
   padding: 1rem;
   overflow: hidden;
   /* background-color: var(--primary-background-color);
@@ -22,6 +22,49 @@
   align-items: center;
   justify-content: center;
   margin-right: 1rem;
+}
+
+.table__header {
+  width: 100%;
+  height: 10%;
+  padding: 0.8rem 1.9rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table__header .input-group {
+  width: 25%;
+  height: 100%;
+  background-color: var(--primary-text-color);
+  padding: 0 0.8rem;
+  border-radius: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.2s;
+}
+
+.table__header .input-group:hover {
+  width: 35%;
+  background-color: var(--primary-text-color);
+  box-shadow: 0 0.1rem 0.4rem #0002;
+}
+
+.table__header .input-group i {
+  color: var(--primary-background-color);
+  width: auto;
+}
+
+.table__header .input-group input {
+  width: 100%;
+  padding: 0 0.5rem 0 0.3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .table-body {
@@ -98,26 +141,74 @@ tbody tr:hover {
 }
 
 .approved {
-  background-color: #22c19749;
+  background-color: #22c1978b;
   color: #2bffc6;
 }
 
 .pending {
-  background-color: #cce71937;
+  background-color: #cce7197c;
   color: #ffc904;
+}
+
+.action-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.action-btn {
+  width: 5rem;
 }
 
 button {
   width: 100%;
   min-height: 30px;
-  color: var(--primary-background-color);
-  background-color: var(--primary-text-color);
-  box-shadow: 0px 0px 0px var(--primary-text-color);
   transition: box-shadow 0.3s ease-in-out;
   border: none;
   border-radius: 3px;
+  padding: 0.5rem;
 }
 
-button:hover {
-  box-shadow: 0px 0px 8px var(--primary-text-color);
+.approve-btn {
+  color: var(--primary-white-color);
+  background-color: var(--primary-blue-color);
+  box-shadow: 0px 0px 0px var(--primary-blue-color);
+}
+
+.approve-btn:hover {
+  box-shadow: 0px 0px 8px var(--primary-blue-color);
+}
+
+.delete-btn {
+  color: var(--primary-white-color);
+  background-color: var(--primary-red-color);
+  box-shadow: 0px 0px 0px var(--primary-red-color);
+}
+
+.delete-btn:hover {
+  box-shadow: 0px 0px 8px var(--primary-red-color);
+}
+
+tbody tr {
+  --delay: 0.1s;
+  transition: 0.5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+  opacity: 0;
+  /* transform: translateX(100%); */
+}
+
+tbody tr.hide td,
+tbody tr.hide td p {
+  padding: 0;
+  font: 0;
+  transition: 0.2s ease-in-out 0.5s;
+}
+
+tbody tr.hide td img {
+  width: 0;
+  height: 0;
+  transition: 0.2s ease-in-out 0.5s;
 }
