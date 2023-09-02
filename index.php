@@ -43,9 +43,9 @@ if (in_array($page, $validDashboardPages)) {
         if ($_SESSION["user_role_id"] === 'SUP') {
             include_once 'pages/' . 'manage_payments' . '.php';
         } elseif ($_SESSION["user_role_id"] === 'EMP') {
-            include_once 'pages/' . 'request_payments' . '.php';
+            include_once 'pages/' . 'work' . '.php';
         } elseif ($_SESSION["user_role_id"] === 'ADM') {
-            include_once 'pages/' . 'request_payments' . '.php';
+            include_once 'pages/' . 'work' . '.php';
         }
     } else {
         include_once 'pages/' . $page . '.php';

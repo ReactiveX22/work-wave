@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if ($action === 'approve') {
                 approve_role_request($pdo, $user_id, $requested_role);
             } elseif ($action === 'delete') {
-                delete_role_request($pdo, $user_id, $requested_role);
+                delete_role_request($pdo, $user_id);
             }
 
             $_SESSION['role_req_list'] = get_role_requests($pdo);

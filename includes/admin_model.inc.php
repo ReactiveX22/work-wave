@@ -22,14 +22,14 @@ function approve_role_request(object $pdo, $user_id, $requested_role)
 {
     set_role_req_0($pdo, $user_id);
     change_role($pdo, $user_id, $requested_role);
+    delete_role_request($pdo, $user_id);
 }
 
-function delete_role_request(object $pdo, $user_id, $requested_role)
+function delete_role_request(object $pdo, $user_id)
 {
-    $query = "DELETE FROM pending_role_reqs WHERE user_id = :user_id AND requested_role = :requested_role;";
+    $query = "DELETE FROM pending_role_reqs WHERE user_id = :user_id;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id);
-    $stmt->bindParam(":requested_role", $requested_role);
     $stmt->execute();
 }
 

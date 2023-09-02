@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if ($action === 'approve') {
                 approve_pay_request($pdo, $user_id, $pending_amount);
             } elseif ($action === 'delete') {
-                delete_pay_request($pdo, $user_id, $pending_amount);
+                delete_pay_request($pdo, $user_id);
             }
 
             $_SESSION['pay_req_list'] = get_pay_requests($pdo);
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($errors) {
         }
 
-        header("Location: ../index.php?page=dashboard");
+        header("Location: ../index.php?page=manage_payments");
         die();
 
         $pdo = null;

@@ -51,7 +51,8 @@ try {
 
 
     $user_id = $_SESSION["user_id"];
-    $_SESSION["employee_pending_balance"] = get_user_total_pending_balance($pdo, $user_id);
+    $employee_pending_balance = get_user_total_pending_balance($pdo, $user_id);
+    $_SESSION["employee_pending_balance"] = !empty($employee_pending_balance) ? $employee_pending_balance : 0;
     $_SESSION["no_of_pb_req"] = get_total_nof_pb_req($pdo, $user_id);
 } catch (PDOException $e) {
     die("Query Failed: " . $e->getMessage());

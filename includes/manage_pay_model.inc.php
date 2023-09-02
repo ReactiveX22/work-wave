@@ -22,14 +22,14 @@ function approve_pay_request(object $pdo, $user_id, $pending_amount)
 {
     set_pay_req_0($pdo, $user_id);
     add_balance($pdo, $user_id, $pending_amount);
+    delete_pay_request($pdo, $user_id);
 }
 
-function delete_pay_request(object $pdo, $user_id, $pending_amount)
+function delete_pay_request(object $pdo, $user_id)
 {
-    $query = "DELETE FROM pending_balances WHERE user_id = :user_id AND pending_amount = :pending_amount;";
+    $query = "DELETE FROM pending_balances WHERE user_id = :user_id;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id);
-    $stmt->bindParam(":pending_amount", $pending_amount);
     $stmt->execute();
 }
 
