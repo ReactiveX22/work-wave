@@ -72,6 +72,7 @@
   border: 1px solid var(--primary-text-color);
   border-radius: 0.6rem;
   overflow: auto;
+  box-shadow: 0 0 0 var(--primary-text-color);
 }
 
 .table-body:hover {
@@ -144,8 +145,8 @@ tbody tr:nth-child(even) {
 }
 
 .pending {
-  background-color: #cce7197c;
-  color: #ffc904;
+  background-color: var(--primary-yellow-color);
+  color: var(--primary-yellow-text-color);
 }
 
 .action-btn-container {

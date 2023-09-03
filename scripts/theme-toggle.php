@@ -14,7 +14,7 @@
 
     function applyTheme() {
         const themeName = isDarkMode ? 'dark.css' : 'light.css';
-        themeLink.href = `css/themes/${themeName}`;
+        themeLink.href = `css/themes/${themeName}?v=<?php echo time(); ?>`;
     }
 
     function updateDarkModeIcon() {
