@@ -15,10 +15,8 @@ function show_employee_rows()
 
                 echo '<tr>';
                 echo '<td class="employees"><img src="' . $image_source . '" alt="Profile Picture">' . $employee['username'] . '</td>';
-                echo '<td>' . $employee['hourly_rate'] . '</td>';
-                echo '<td>' . ($employee['total_worked_hours'] ?? '0.00') . '</td>';
-                echo '<td>' . ($employee['pending_balance'] ?? '0.00') . '</td>';
-                echo '<td>' . ($employee['balance'] ?? '0.00') . '</td>';
+                echo '<td>' . $employee['tasks_completed'] . '</td>';
+                echo '<td>' . $employee['tasks_pending'] . '</td>';
                 echo '</tr>';
             }
         } else {

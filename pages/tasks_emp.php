@@ -1,6 +1,6 @@
 <?php
-include 'includes/employee_list.inc.php';
-include 'includes/employee_list_view.inc.php';
+include 'includes/tasks_list.inc.php';
+include 'includes/tasks_list_view.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ include 'includes/employee_list_view.inc.php';
     <main class="main-content">
         <div class="dashboard_container">
             <section class="table__header">
-                <h1>Employees</h1>
+                <h1>Assinged Tasks</h1>
                 <div class="input-group">
                     <input type="search" placeholder="Search Data...">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -28,13 +28,13 @@ include 'includes/employee_list_view.inc.php';
                 <table>
                     <thead>
                         <tr>
-                            <th>Employee</th>
-                            <th>Total Completed Tasks</th>
-                            <th>Pending Tasks</th>
+                            <th>Task Name</th>
+                            <th>Status</th>
+                            <th>Due Date</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php show_employee_rows(); ?>
+                        <?php show_emp_tasks_rows(); ?>
                     </tbody>
                 </table>
             </section>

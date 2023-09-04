@@ -15,11 +15,31 @@
                 <span class="link-text">Employees</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="index.php?page=work">
-                <i class="fa-solid fa-hand-holding-dollar"></i>
-                <span class="link-text">Payments</span>
+        <li class="nav-item" id="settings">
+            <a class="nav-link" href="#">
+                <i class="fa-regular fa-clock"></i>
+                <span class="link-text">Tasks</span>
             </a>
+            <ul class="nav-sub">
+                <li class="nav-sub-item">
+                    <a class="nav-sub-link" href="index.php?page=create_task">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span class="sub-link-text">Create A Task</span>
+                    </a>
+                </li>
+                <li class="nav-sub-item">
+                    <a class="nav-sub-link" href="index.php?page=tasks">
+                        <i class="fa-solid fa-user-gear"></i>
+                        <span class="sub-link-text">Manage Tasks</span>
+                    </a>
+                </li>
+                <li class="nav-sub-item">
+                    <a class="nav-sub-link" href="index.php?page=assign_task">
+                        <i class="fa-solid fa-user-clock"></i>
+                        <span class="sub-link-text">Assign Task</span>
+                    </a>
+                </li>
+            </ul>
         </li>
         <li class="nav-item" id="settings">
             <a class="nav-link" href="#">

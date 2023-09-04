@@ -22,13 +22,13 @@ function show_username()
     }
 }
 
-function show_worked_hours()
+function show_completed_tasks()
 {
-    if (isset($_SESSION["employee_total_worked_hours"])) {
+    if (isset($_SESSION["emp_total_tasks_done"])) {
 
-        $total_worked_hours = $_SESSION["employee_total_worked_hours"];
+        $employee_total_tasks_done = $_SESSION["emp_total_tasks_done"];
 
-        echo '<p class="amount_num">' . $total_worked_hours . '</p>';
+        echo '<p class="amount_num">' . $employee_total_tasks_done . '</p>';
     }
 }
 

@@ -5,7 +5,7 @@ declare(strict_types=1);
 
 function get_role_requests(object $pdo)
 {
-    $query = "SELECT * FROM pending_role_reqs_view";
+    $query = "SELECT * FROM (SELECT prr.user_id, u.username, u.image_path, prr.requested_role, prr.requested_date, prr.is_pending FROM pending_role_reqs prr JOIN users u ON prr.user_id = u.user_id) as subquery";
 
     $stmt = $pdo->prepare($query);
     $stmt->execute();

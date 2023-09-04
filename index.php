@@ -8,13 +8,13 @@ $isDarkMode = isset($_COOKIE["isDarkMode"]) ? $_COOKIE["isDarkMode"] === "1" : t
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 $validPages = ['home', 'login', 'signup'];
-$validDashboardPages = ['work', 'dashboard', 'profile', 'settings_update_pw', 'dashboard_sup', 'request_role', 'request_payments', 'manage_payments'];
+$validDashboardPages = ['tasks', 'assign_task', 'submit_task', 'dashboard', 'profile', 'settings_update_pw', 'dashboard_sup', 'request_role', 'request_payments', 'manage_payments', 'create_task'];
 
 if (!in_array($page, $validPages) && !in_array($page, $validDashboardPages)) {
     $page = 'home';
 }
 
-if (in_array($page, $validDashboardPages)) {
+if (in_array($page, $validDashboardPages) && isset($_SESSION["user_role_id"])) {
     // header
     include_once 'includes/header_dashboard.php';
 
@@ -32,6 +32,7 @@ if (in_array($page, $validDashboardPages)) {
 
     // dashboards
     if ($page === 'dashboard') {
+
         if ($_SESSION["user_role_id"] === 'SUP') {
             include_once 'pages/' . 'dashboard_sup' . '.php';
         } elseif ($_SESSION["user_role_id"] === 'ADM') {
@@ -39,21 +40,24 @@ if (in_array($page, $validDashboardPages)) {
         } elseif ($_SESSION["user_role_id"] === 'EMP') {
             include_once 'pages/' . 'dashboard_emp' . '.php';
         }
-    } elseif ($page === 'work') {
+    } elseif ($page === 'tasks') {
         if ($_SESSION["user_role_id"] === 'SUP') {
-            include_once 'pages/' . 'manage_payments' . '.php';
+            include_once 'pages/' . 'tasks_sup' . '.php';
         } elseif ($_SESSION["user_role_id"] === 'EMP') {
-            include_once 'pages/' . 'work' . '.php';
+            include_once 'pages/' . 'tasks_emp' . '.php';
         } elseif ($_SESSION["user_role_id"] === 'ADM') {
             include_once 'pages/' . 'work' . '.php';
         }
+    } elseif ($page === 'submit_task' && $_SESSION["user_role_id"] === 'EMP') {
+
+        include_once 'pages/' . 'submit_task' . '.php';
     } else {
         include_once 'pages/' . $page . '.php';
     }
 
     // scripts
     include_once 'scripts/theme-toggle.php';
-} else {
+} elseif (in_array($page, $validPages)) {
     // header
     include_once 'includes/header.php';
 

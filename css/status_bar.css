@@ -48,6 +48,7 @@
   display: flex;
   align-items: center;
   line-height: 150%;
+  padding: 1rem 0;
 }
 
 .amount_unit {

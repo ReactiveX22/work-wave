@@ -25,7 +25,15 @@ function get_user(object $pdo, string $username)
 
 function get_user_role_id(object $pdo, $user_id)
 {
-    $query = "SELECT role_id FROM user_roles_view WHERE user_id = :user_id;";
+    $query = "SELECT role_id FROM (SELECT
+  ur.user_id AS user_id,
+  u.username AS username,
+  ur.role_id AS role_id,
+  r.role_name AS role_name
+FROM
+  user_roles ur
+  JOIN users u ON ur.user_id = u.user_id
+  JOIN roles r ON ur.role_id = r.role_id;) WHERE user_id = :user_id;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();
@@ -36,7 +44,15 @@ function get_user_role_id(object $pdo, $user_id)
 
 function get_user_role_name(object $pdo, $user_id)
 {
-    $query = "SELECT role_name FROM user_roles_view WHERE user_id = :user_id;";
+    $query = "SELECT role_name FROM (SELECT
+  ur.user_id AS user_id,
+  u.username AS username,
+  ur.role_id AS role_id,
+  r.role_name AS role_name
+FROM
+  user_roles ur
+  JOIN users u ON ur.user_id = u.user_id
+  JOIN roles r ON ur.role_id = r.role_id;) WHERE user_id = :user_id;";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();

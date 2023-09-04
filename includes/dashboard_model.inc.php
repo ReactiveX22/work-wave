@@ -140,3 +140,19 @@ function get_days_and_worked_hours_arrays(object $pdo, $employee_id)
     // Step 4: Return the modified array as a JSON-encoded string
     return json_encode(array($days, $workedHours));
 }
+
+function get_emp_total_task_done(object $pdo, $user_id)
+{
+    $query = "SELECT COUNT(*) AS emp_total_task_done FROM task_emp_map JOIN tasks ON task_emp_map.task_id = tasks.task_id WHERE tasks.task_status = '0' AND task_emp_map.user_id = :user_id;";
+
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":user_id", $user_id);
+    $stmt->execute();
+
+    if ($stmt->rowCount() == 0) {
+        return 0;
+    }
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['emp_total_task_done'];
+}
