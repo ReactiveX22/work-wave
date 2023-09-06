@@ -1,6 +1,13 @@
 :root {
   --primary-background-color: #171717;
+
+  --primary-top-nav-bgcolor: #262626;
+  --primary-top-nav-tcolor: #f2ecff;
+
   --primary-text-color: #f2ecff;
+
+  --secondary-border-color: #313131;
+  --secondary-thead-color: #f2ecff;
 
   --primary-red-color: #d92b2b;
   --primary-blue-color: #065fd4;

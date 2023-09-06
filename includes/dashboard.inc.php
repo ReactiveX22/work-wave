@@ -15,6 +15,7 @@ try {
     $worked_hours = get_worked_hours_array($pdo, $employee_id);
 
     $_SESSION["emp_total_tasks_done"] = get_emp_total_task_done($pdo, $employee_id);
+    $_SESSION["emp_pending_tasks"] = get_emp_pending_tasks($pdo, $employee_id);
 } catch (PDOException $e) {
     die("Query Failed: " . $e->getMessage());
 }

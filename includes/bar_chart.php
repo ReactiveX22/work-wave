@@ -7,70 +7,48 @@
         <canvas id="myChart"></canvas>
     </div>
     <script>
-        function createBarChart() {
-            // Retrieve the data from the PHP function
-            var data = <?php echo get_days_and_worked_hours_arrays($pdo, $employee_id); ?>;
-            var days = data[0];
-            var workedHours = data[1];
-            console.log(days);
-            console.log(data);
+        function createPieChart() {
+            // Provide data for the pie chart
+            var incompleteTasks = 10;
+            var completedTasks = 20;
 
-            // Create the bar chart
+            // Create the pie chart
             var ctx = document.getElementById('myChart').getContext('2d');
+            var data = [{
+                    label: 'Completed',
+                    data: completedTasks
+                },
+                {
+                    label: 'Incomplete',
+                    data: incompleteTasks
+                }
+            ];
             var myChart = new Chart(ctx, {
-                type: 'bar',
+                type: 'doughnut',
                 data: {
-                    labels: days,
+                    labels: data.map(d => d.label),
                     datasets: [{
-                        label: 'Worked Hours',
-                        data: workedHours,
-                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                        borderColor: 'rgba(75, 192, 192, 0.6)',
-                        hoverBackgroundColor: '#97EA96',
-                        hoverBorderColor: '#97EA96',
-                        borderWidth: 1,
-                        minBarLength: 2,
-                        barThickness: 50,
-
+                        data: data.map(d => d.data),
+                        backgroundColor: ['#005C53', '#DBF227'],
+                        hoverBackgroundColor: ['#AADEA7', '#D6D58E'],
+                        borderWidth: .1
                     }]
                 },
                 options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                precision: 0,
-                                font: {
-                                    size: 14
-                                }
-                            },
-                            grid: {
-                                display: true
-                            }
-                        },
-                        x: {
-                            ticks: {
-                                font: {
-                                    size: 12,
-                                }
-                            },
-                            grid: {
-                                display: false
-                            },
-                        }
-                    },
                     plugins: {
                         legend: {
-                            font: 1,
-                            display: true
+                            display: true,
+                            labels: {
+                                font: {
+                                    size: 10 // Set the font size in pixels
+                                },
+                            }
                         }
-                    },
-                    responsive: true,
-                    maintainAspectRatio: true
+                    }
                 }
             });
         }
 
-        // Call the function to create the bar chart
-        createBarChart();
+        // Call the function to create the pie chart
+        createPieChart();
     </script>

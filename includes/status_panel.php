@@ -10,5 +10,11 @@
                 <?php show_completed_tasks() ?>
             </div>
         </div>
+        <div class="card">
+            <div class="title">Incomplete Tasks</div>
+            <div class="amount_box">
+                <?php show_incomplete_tasks() ?>
+            </div>
+        </div>
     </div>
 </div>

@@ -4,34 +4,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 .card_container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .card {
-  width: 270px;
+  width: 150px;
   background-color: var(--primary-background-color);
   color: var(--primary-text-color);
+  border: 1px solid var(--secondary-border-color);
   border-radius: 5px;
   display: flex;
   align-items: left;
   justify-content: center;
   flex-direction: column;
-  padding: 10px;
+  padding: 15px;
   animation: fadeinH1 0.5s ease-in-out;
-  box-shadow: 0px 0px 4px var(--primary-text-color);
+  /* box-shadow: 0px 0px 4px var(--primary-text-color); */
   transition: color 300ms ease, background-color 300ms ease;
 }
 
 .card:hover {
-  background-color: var(--primary-text-color);
-  color: var(--primary-background-color);
+  background-color: var(--secondary-border-color);
+  color: var(--primary-text-color);
+  box-shadow: 0px 0px 4px var(--secondary-border-color);
 }
 
 .card .title {

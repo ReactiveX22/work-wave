@@ -7,11 +7,12 @@
 
 .nav_header {
   position: absolute;
-  background-color: var(--primary-text-color);
-  color: var(--primary-background-color);
+  background-color: var(--primary-top-nav-bgcolor);
+  color: var(--primary-top-nav-tcolor);
   width: 100%;
   padding: 0px 0;
-  box-shadow: 0px 0px 3px var(--primary-text-color);
+  z-index: 999999;
+  box-shadow: 0px 0px 3px var(--secondary-border-color);
 }
 
 .nav_header .menu {
@@ -24,7 +25,7 @@
 .menu .logo a {
   padding: 2px 5px;
   text-decoration: none;
-  color: var(--primary-background-color);
+  color: var(--primary-top-nav-tcolor);
   font-weight: 900;
   font-size: 20px;
 }
@@ -46,7 +47,7 @@
   font-weight: 400;
   font-size: 14px;
   text-decoration: none;
-  color: var(--primary-background-color);
+  color: var(--primary-top-nav-tcolor);
   border-radius: 5px;
   padding: 6px 15px;
   box-shadow: 0px 0px 0px var(--primary-background-color);
@@ -54,8 +55,8 @@
 }
 
 .menu ul li a:hover {
-  background-color: var(--primary-background-color);
-  color: var(--primary-text-color);
+  background-color: var(--primary-top-nav-tcolor);
+  color: var(--primary-top-nav-bgcolor);
   box-shadow: 0px 0px 5px var(--primary-background-color);
 }
 
@@ -64,13 +65,13 @@
   padding: 8px 10px;
   border-radius: 5px;
   cursor: pointer;
-  color: var(--primary-background-color);
+  color: var(--primary-top-nav-tcolor);
   box-shadow: 0px 0px 0px var(--primary-background-color);
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .menu ul li .dark-mode-toggle:hover {
-  background-color: var(--primary-background-color);
-  color: var(--primary-text-color);
+  background-color: var(--primary-top-nav-tcolor);
+  color: var(--primary-top-nav-bgcolor);
   box-shadow: 0px 0px 5px var(--primary-background-color);
 }

@@ -25,7 +25,7 @@ h2 {
   width: 400px;
   border-radius: 0.6rem;
   background-color: var(--primary-background-color);
-  box-shadow: 0px 0px 10px var(--primary-text-color);
+  box-shadow: 0px 0px 10px var(--secondary-border-color);
   animation: fadein 0.6s ease-in-out;
 }
 
@@ -58,7 +58,7 @@ a {
   font-size: 1em;
   font-weight: 300;
   color: var(--primary-text-color);
-  border-bottom: 2px solid var(--primary-text-color);
+  border-bottom: 2px solid var(--secondary-border-color);
 }
 
 .input__box label {

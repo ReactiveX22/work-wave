@@ -32,6 +32,16 @@ function show_completed_tasks()
     }
 }
 
+function show_incomplete_tasks()
+{
+    if (isset($_SESSION["emp_pending_tasks"])) {
+
+        $emp_pending_tasks = $_SESSION["emp_pending_tasks"];
+
+        echo '<p class="amount_num">' . $emp_pending_tasks . '</p>';
+    }
+}
+
 function show_balance()
 {
     if (isset($_SESSION["employee_balance"])) {
