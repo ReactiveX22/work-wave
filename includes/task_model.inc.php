@@ -16,7 +16,17 @@ function create_task(object $pdo, $user_id, $task_name, $task_desc, $due_date)
     $stmt->execute();
 
     $task_id = $pdo->lastInsertId();
-    assign_task($pdo, $user_id, $task_id);
+    assign_sup_task($pdo, $user_id, $task_id);
+}
+
+function assign_sup_task(object $pdo, $user_id, $task_id)
+{
+    $query = "INSERT INTO task_sup_map (task_id, user_id) VALUES (:task_id, :user_id);";
+
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":task_id", $task_id);
+    $stmt->bindParam(":user_id", $user_id);
+    $stmt->execute();
 }
 
 function assign_task(object $pdo, $user_id, $task_id)
@@ -32,6 +42,11 @@ function assign_task(object $pdo, $user_id, $task_id)
 function delete_task(object $pdo, $task_id)
 {
     $query1 = "DELETE FROM task_emp_map WHERE task_id = :task_id;";
+    $stmt = $pdo->prepare($query1);
+    $stmt->bindParam(":task_id", $task_id);
+    $stmt->execute();
+
+    $query1 = "DELETE FROM task_files WHERE task_id = :task_id;";
     $stmt = $pdo->prepare($query1);
     $stmt->bindParam(":task_id", $task_id);
     $stmt->execute();
@@ -70,4 +85,68 @@ function get_task_name(object $pdo, $task_id)
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result["task_name"];
+}
+
+function get_task_desc(object $pdo, $task_id)
+{
+    $query = "SELECT task_desc FROM tasks WHERE task_id = :task_id;";
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":task_id", $task_id);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result["task_desc"];
+}
+
+function get_task_done_percentage(object $pdo, $task_id, $user_id)
+{
+    $query = "SELECT 
+    CONCAT(ROUND((COUNT(CASE WHEN tf.file_path IS NOT NULL THEN 1 END) / COUNT(*)) * 100, 2), '%') as done_percentage
+FROM task_emp_map tem
+JOIN users u ON u.user_id = tem.user_id
+LEFT JOIN task_files tf ON tf.user_id = tem.user_id
+WHERE tem.task_id = :task_id
+    AND tem.user_id <> :user_id;";
+
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":task_id", $task_id);
+    $stmt->bindParam(":user_id", $user_id);
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result["done_percentage"];
+}
+
+function get_task_assigned_to_list(object $pdo, $task_id, $sup_id)
+{
+    $query = "SELECT 
+    u.username,
+    u.image_path,
+    CASE 
+        WHEN tf.task_id = tem.task_id AND tf.file_path IS NOT NULL THEN 'Yes'
+        ELSE 'No' 
+    END AS has_file,
+    CASE 
+        WHEN tf.task_id = tem.task_id AND tf.file_path IS NOT NULL THEN tf.file_path 
+        ELSE NULL 
+    END AS file_path
+FROM task_emp_map tem
+JOIN users u ON u.user_id = tem.user_id
+LEFT JOIN task_files tf ON tf.user_id = tem.user_id
+WHERE tem.task_id = :task_id
+    AND tem.user_id <> :sup_id;
+
+";
+
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":task_id", $task_id);
+    $stmt->bindParam(":sup_id", $sup_id);
+    $stmt->execute();
+
+    if ($stmt->rowCount() == 0) {
+        return 0;
+    }
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
 }

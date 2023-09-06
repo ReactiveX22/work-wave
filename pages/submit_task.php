@@ -31,10 +31,7 @@ require_once 'includes/task_view.inc.php';
                                     <?php show_task_options(); ?>
                                 </select>
                             </div>
-                            <label for="tasks">Task Description</label>
-                            <div class="task-desc">
-                                <?php show_task_desc(); ?>
-                            </div>
+                            <br>
                             <label for="tasks">Select A File</label>
                             <div class="input__image" onclick="document.getElementById('file').click();">
                                 <i class="fa-solid fa-file-pdf"></i>
@@ -46,6 +43,7 @@ require_once 'includes/task_view.inc.php';
                 </div>
                 <button type="submit" form="form1">Submit Task</button>
             </div>
+            <button class="back-button" onclick="window.history.back()"><i class="fas fa-arrow-left"></i></button>
         </div>
     </main>
     <script>

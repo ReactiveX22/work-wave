@@ -31,6 +31,7 @@ include 'includes/tasks_list_view.inc.php';
                             <th>Task Name</th>
                             <th>Status</th>
                             <th>Due Date</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

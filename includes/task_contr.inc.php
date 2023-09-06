@@ -59,7 +59,7 @@ function submit_task(object $pdo, string $username, $user_id, $task_id, $task_fi
     $task_name = get_task_name($pdo, $task_id);
 
     $file_name = rename_file($task_file, $username, $task_name);
-    $fileSavePath = '../profile_pics/' . $file_name;
+    $fileSavePath = '../uploaded_files/' . $file_name;
 
     set_task_file($pdo, $user_id, $task_id, $file_name);
 

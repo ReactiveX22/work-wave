@@ -36,12 +36,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } catch (PDOException $e) {
         die("Query Failed: " . $e->getMessage());
     }
-} else {
-    require_once 'config_session.inc.php';
-    if (isset($_SESSION["user_id"])) {
-        header("Location: ./index.php?page=dashboard");
-    }
-
-    // header("Location: ../index.php?page=home");
-    // die();
 }

@@ -27,12 +27,6 @@
                         <span class="sub-link-text">Update Password</span>
                     </a>
                 </li>
-                <li class="nav-sub-item">
-                    <a class="nav-sub-link" href="index.php?page=request_role">
-                        <i class="fa-solid fa-user-gear"></i>
-                        <span class="sub-link-text">Request Role</span>
-                    </a>
-                </li>
             </ul>
         </li>
         <li class="nav-item">

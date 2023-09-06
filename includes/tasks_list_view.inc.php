@@ -15,6 +15,20 @@ function show_emp_tasks_rows()
                 echo '<td>' . $task['task_name'] . '</td>';
                 echo '<td><p class="status ' . ($task['task_status'] == 0 ? 'approved' : 'pending') . '">' . ($task['task_status'] == 0 ? 'Completed' : 'Pending') . '</p></td>';
                 echo '<td>' . ($formatted_date = date('M d', strtotime($task['due_date']))) . '</td>';
+                echo '<td>';
+                echo '<div class="action-btn-container">';
+                echo '<form action="includes/manage_task.inc.php" method="post">';
+                echo '<input type="hidden" name="task_id" value="' . $task['task_id'] . '"/>';
+                echo '<input type="hidden" name="action" value="view"/>';
+                echo '<button class="action-btn approve-btn" type="submit" name="submitButton"><p>View</p></button>';
+                echo '</form>';
+                echo '<form action="includes/manage_task.inc.php" method="post">';
+                echo '<input type="hidden" name="action" value="submit-page"/>';
+                echo '<button class="action-btn approve-btn" type="submit" name="submitButton"><p>Submit</p></button>';
+                echo '</form>';
+                echo '</td>';
+                echo '</div>';
+                echo '</td>';
                 echo '</tr>';
             }
         } else {
@@ -38,9 +52,19 @@ function show_sup_tasks_rows()
                 echo '<tr>';
                 echo '<td>' . $task['task_name'] . '</td>';
                 echo '<td><p class="status ' . ($task['task_status'] == 0 ? 'approved' : 'pending') . '">' . ($task['task_status'] == 0 ? 'Completed' : 'Pending') . '</p></td>';
+                echo '<td><p class="status ' . ($task['done_percentage'] == '100.00%' ? 'approved' : 'pending') . '">' . $task['done_percentage']  . '</p></td>';
                 echo '<td>' . ($formatted_date = date('M d', strtotime($task['due_date']))) . '</td>';
                 echo '<td>';
                 echo '<div class="action-btn-container">';
+                echo '<form action="includes/manage_task.inc.php" method="post">';
+                echo '<input type="hidden" name="task_id" value="' . $task['task_id'] . '"/>';
+                echo '<input type="hidden" name="action" value="view"/>';
+                echo '<button class="action-btn approve-btn" type="submit" name="submitButton"><p>View</p></button>';
+                echo '</form>';
+                echo '<form action="includes/manage_task.inc.php" method="post">';
+                echo '<input type="hidden" name="action" value="assign"/>';
+                echo '<button class="action-btn approve-btn" type="submit" name="submitButton"><p>Assign</p></button>';
+                echo '</form>';
                 echo '<form action="includes/manage_task.inc.php" method="post">';
                 echo '<input type="hidden" name="task_id" value="' . $task['task_id'] . '"/>';
                 echo '<input type="hidden" name="action" value="approve"/>';
@@ -51,7 +75,6 @@ function show_sup_tasks_rows()
                 echo '<input type="hidden" name="action" value="delete"/>';
                 echo '<button class="action-btn delete-btn" type="submit" name="submitButton"><p>Delete</p></button>';
                 echo '</form>';
-                echo '</td>';
                 echo '</div>';
                 echo '</td>';
                 echo '</tr>';

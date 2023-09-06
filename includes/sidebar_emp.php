@@ -22,21 +22,15 @@
             </a>
             <ul class="nav-sub">
                 <li class="nav-sub-item">
-                    <a class="nav-sub-link" href="index.php?page=submit_task">
-                        <i class="fa-solid fa-list-check"></i>
-                        <span class="sub-link-text">Submit Task</span>
-                    </a>
-                </li>
-                <li class="nav-sub-item">
                     <a class="nav-sub-link" href="index.php?page=tasks">
                         <i class="fa-solid fa-user-gear"></i>
                         <span class="sub-link-text">Manage Tasks</span>
                     </a>
                 </li>
                 <li class="nav-sub-item">
-                    <a class="nav-sub-link" href="index.php?page=assign_task">
-                        <i class="fa-solid fa-user-clock"></i>
-                        <span class="sub-link-text">Assign Task</span>
+                    <a class="nav-sub-link" href="index.php?page=submit_task">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span class="sub-link-text">Submit Task</span>
                     </a>
                 </li>
             </ul>
