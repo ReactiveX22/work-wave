@@ -2,38 +2,37 @@
 
 A project for DBMS Course.
 
-Employee work-hours tracker, visualizer.
+Employee Task Management, Visualizer.
 
 Live Site: http://workwave.free.nf (not working currently)
 
 ## Project Features
 
 **All Users:**
-1. User Registration
+
+1. User Signup
 2. User Login
 3. User Logout
 4. Profile Viewing
-5. Password Change
+5. Update Password
 6. Viewing Pending Role Requests
 
 **Employees:**
-1. Role Request
-2. Total Worked Hours Viewing
-3. Work Hours Visualization (Bar Chart)
-4. Payment Requests
-5. Balance Viewing
-6. Pending Balance Viewing
+
+1. Request Role
+2. View Assigned Tasks and Completed Tasks
+3. Upload Task File
 
 **Admins:**
+
 1. Role Approval
+2. Supervisor Assignment
 
 **Supervisors:**
-1. Payment Approval
 
-**General Features**:
-1. Handle errors
-
-**Future Features:**
-1. Work Submission by Employees
-2. Work Approval by Supervisors
-3. Admin Assignment of Employees to Supervisors
+1. Create Task
+2. Task Assignment
+3. View Task Data
+4. Download Task
+5. Mark Task as Completed
+6. Delete Task
