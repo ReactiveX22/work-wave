@@ -15,6 +15,12 @@
                 <span class="link-text">Dashboard</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="index.php?page=assign_sup">
+                <i class="fa-solid fa-user-clock"></i>
+                <span class="link-text">Assign Supervisor</span>
+            </a>
+        </li>
         <li class="nav-item" id="settings">
             <a class="nav-link" href="#">
                 <i class="fa-solid fa-gear"></i>

@@ -5,6 +5,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $requested_role = $_POST["requested_role"];
     $action = $_POST["action"];
 
+    $sup_id = $_POST["sup_id"];
+    $emp_id = $_POST["emp_id"];
+
     try {
         require_once 'db-handler.php';
         require_once 'admin_model.inc.php';
@@ -14,17 +17,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // error handlers
         $errors = [];
 
-        if (is_input_empty($user_id, $requested_role)) {
-            $errors["empty_input"] = "Fill in all fields!";
-        } else {
-            if ($action === 'approve') {
-                approve_role_request($pdo, $user_id, $requested_role);
-            } elseif ($action === 'delete') {
-                delete_role_request($pdo, $user_id);
-            }
 
-            $_SESSION['role_req_list'] = get_role_requests($pdo);
+        if ($action === 'approve') {
+            approve_role_request($pdo, $user_id, $requested_role);
+        } elseif ($action === 'delete') {
+            delete_role_request($pdo, $user_id);
+        } elseif ($action === 'assign-sup') {
+            assign_sup($pdo, $sup_id, $emp_id);
+
+            header("Location: ../index.php?page=assign_sup");
+            die();
         }
+
+        $_SESSION['role_req_list'] = get_role_requests($pdo);
+
 
         if ($errors) {
         }
@@ -45,6 +51,8 @@ try {
     require_once 'config_session.inc.php';
 
     $_SESSION['role_req_list'] = get_role_requests($pdo);
+    $_SESSION['sup_list'] = get_sup_list($pdo);
+    $_SESSION['emp_list'] = get_emp_list($pdo);
 } catch (PDOException $e) {
     die("Query Failed: " . $e->getMessage());
 }

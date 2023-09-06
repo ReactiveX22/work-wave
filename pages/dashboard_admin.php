@@ -18,7 +18,7 @@ include 'includes/admin_view.inc.php';
     <main class="main-content">
         <div class="dashboard_container">
             <section class="table__header">
-                <h1>Employees</h1>
+                <h1>Role Requests</h1>
                 <div class="input-group">
                     <input type="search" placeholder="Search Data...">
                     <i class="fa-solid fa-magnifying-glass"></i>

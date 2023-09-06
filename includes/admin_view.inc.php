@@ -48,3 +48,36 @@ function show_role_req_rows()
         }
     }
 }
+
+function show_sup_options()
+{
+    if (isset($_SESSION['sup_list'])) {
+
+        $sup_list = $_SESSION['sup_list'];
+
+        if (!empty($sup_list)) {
+            foreach ($sup_list as $sup) {
+                echo "<option value='" . $sup['sup_id'] . "'>" . $sup['username'] . "</option>";
+            }
+        } else {
+            echo '<option value="">No Task is Available</option>';
+        }
+    }
+}
+
+function show_emp_options()
+{
+    if (isset($_SESSION['emp_list'])) {
+
+        $emp_list = $_SESSION['emp_list'];
+
+        if (!empty($emp_list)) {
+            foreach ($emp_list as $emp) {
+                // echo '<option value="">Employee</option>';
+                echo "<option value='" . $emp['emp_id'] . "'>" . $emp['username'] . "</option>";
+            }
+        } else {
+            echo '<option value="">No Employee is Available</option>';
+        }
+    }
+}
