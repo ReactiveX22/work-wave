@@ -1,72 +1,51 @@
 <?php
 require_once 'includes/config_session.inc.php';
 
-// theme-toggle stuff
 $isDarkMode = isset($_COOKIE["isDarkMode"]) ? $_COOKIE["isDarkMode"] === "1" : true;
 
-// routing
 $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
 $validPages = ['home', 'login', 'signup'];
 $validDashboardPages = ['tasks', 'assign_task', 'submit_task', 'view_task', 'assign_sup', 'dashboard', 'profile', 'settings_update_pw', 'dashboard_sup', 'request_role', 'request_payments', 'manage_payments', 'create_task'];
 
-if (!in_array($page, $validPages) && !in_array($page, $validDashboardPages)) {
+if (!in_array($page, array_merge($validPages, $validDashboardPages))) {
     $page = 'home';
 }
 
-if (in_array($page, $validDashboardPages) && isset($_SESSION["user_role_id"])) {
-    // header
+$role = isset($_SESSION["user_role_id"]) ? $_SESSION["user_role_id"] : '';
+
+$routes = [
+    'SUP' => [
+        'sidebar' => 'includes/sidebar_sup.php',
+        'dashboard' => 'pages/dashboard_sup.php',
+        'tasks' => 'pages/tasks_sup.php'
+    ],
+    'ADM' => [
+        'sidebar' => 'includes/sidebar_admin.php',
+        'dashboard' => 'pages/dashboard_admin.php',
+        'tasks' => 'pages/work.php'
+    ],
+    'EMP' => [
+        'sidebar' => 'includes/sidebar_emp.php',
+        'dashboard' => 'pages/dashboard_emp.php',
+        'tasks' => 'pages/tasks_emp.php',
+        'submit_task' => 'pages/submit_task.php'
+    ],
+    'default' => [
+        'sidebar' => 'includes/sidebar.php',
+        'dashboard' => 'pages/dashboard.php',
+        'tasks' => 'pages/tasks.php'
+    ]
+];
+
+if (in_array($page, $validDashboardPages)) {
     include_once 'includes/header_dashboard.php';
-
-    if ($_SESSION["user_role_id"] === 'SUP') {
-        include_once 'includes/' . 'sidebar_sup' . '.php';
-    } elseif ($_SESSION["user_role_id"] === 'ADM') {
-        include_once 'includes/' . 'sidebar_admin' . '.php';
-    } elseif ($_SESSION["user_role_id"] === 'EMP') {
-        include_once 'includes/' . 'sidebar_emp' . '.php';
-    } else {
-        include_once 'includes/sidebar.php';
-    }
-
-    // main page
-
-    // dashboards
-    if ($page === 'dashboard') {
-
-        if ($_SESSION["user_role_id"] === 'SUP') {
-            include_once 'pages/' . 'dashboard_sup' . '.php';
-        } elseif ($_SESSION["user_role_id"] === 'ADM') {
-            include_once 'pages/' . 'dashboard_admin' . '.php';
-        } elseif ($_SESSION["user_role_id"] === 'EMP') {
-            include_once 'pages/' . 'dashboard_emp' . '.php';
-        }
-    } elseif ($page === 'tasks') {
-        if ($_SESSION["user_role_id"] === 'SUP') {
-            include_once 'pages/' . 'tasks_sup' . '.php';
-        } elseif ($_SESSION["user_role_id"] === 'EMP') {
-            include_once 'pages/' . 'tasks_emp' . '.php';
-        } elseif ($_SESSION["user_role_id"] === 'ADM') {
-            include_once 'pages/' . 'work' . '.php';
-        }
-    } elseif ($page === 'submit_task' && $_SESSION["user_role_id"] === 'EMP') {
-
-        include_once 'pages/' . 'submit_task' . '.php';
-    } else {
-        include_once 'pages/' . $page . '.php';
-    }
-
-    // scripts
+    include_once $routes[$role]['sidebar'] ?? $routes['default']['sidebar'];
+    include_once $routes[$role][$page] ?? 'pages/' . $page . '.php';
     include_once 'scripts/theme-toggle.php';
 } elseif (in_array($page, $validPages)) {
-    // header
     include_once 'includes/header.php';
-
-    // main page
     include_once 'pages/' . $page . '.php';
-
-    // footer
     include_once 'includes/footer.php';
-
-    // scripts
     include_once 'scripts/theme-toggle.php';
 }
