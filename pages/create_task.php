@@ -9,7 +9,7 @@ require_once 'includes/settings_view.inc.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" id="themeLink" type="text/css" href="./css/themes/dark.css">
-    <link rel="stylesheet" href="./css/settings.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/create_task.css?v=<?php echo time(); ?>">
     <title>Create a Task</title>
 </head>
 
@@ -36,6 +36,7 @@ require_once 'includes/settings_view.inc.php';
                 </div>
                 <button type="submit" form="form1">Create Task</button>
             </div>
+            <button class="back-button" onclick="window.location.href='index.php?page=tasks'"><i class="fas fa-arrow-left"></i></button>
         </div>
     </main>
 </body>

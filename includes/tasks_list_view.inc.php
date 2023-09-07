@@ -88,3 +88,28 @@ function show_sup_tasks_rows()
         }
     }
 }
+
+function show_dash_sup_tasks_rows()
+{
+    if (isset($_SESSION['employee_task_list'])) {
+
+        $task_list = $_SESSION['employee_task_list'];
+
+        if (!empty($task_list)) {
+            foreach ($task_list as $task) {
+                echo '<tr>';
+                echo '<td>' . $task['task_name'] . '</td>';
+                echo '<td><p class="status ' . ($task['task_status'] == 0 ? 'approved' : 'pending') . '">' . ($task['task_status'] == 0 ? 'Completed' : 'Pending') . '</p></td>';
+                echo '<td><p class="status ' . ($task['done_percentage'] == '100.00%' ? 'approved' : 'pending') . '">' . $task['done_percentage']  . '</p></td>';
+                echo '<td>' . ($formatted_date = date('M d', strtotime($task['due_date']))) . '</td>';
+                echo '</tr>';
+            }
+        } else {
+            echo '<tr>';
+            echo '<td>' . '--' . '</td>';
+            echo '<td>' . '--' . '</td>';
+            echo '<td>' . '--' . '</td>';
+            echo '</tr>';
+        }
+    }
+}

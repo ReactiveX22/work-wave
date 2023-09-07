@@ -10,13 +10,13 @@
   --secondary-thead-color: #f2ecff;
   --secondary-tbody-color: #313131;
 
-  --primary-red-color: #d2524b;
+  --primary-red-color: #ff3f41;
   --primary-blue-color: #4a43d0;
   --primary-white-color: #f2ecff;
 
-  --secondary-status-yellow-color: #e77383;
-  --secondary-status-yellow-text-color: #622d34;
+  --secondary-status-yellow-color: #ff6556;
+  --secondary-status-yellow-text-color: #742e27;
 
-  --secondary-status-blue-color: #3cd787;
-  --secondary-status-blue-text-color: #1b4931;
+  --secondary-status-blue-color: #92dd77;
+  --secondary-status-blue-text-color: #334d29;
 }

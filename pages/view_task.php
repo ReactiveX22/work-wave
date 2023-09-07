@@ -17,16 +17,18 @@ require_once 'includes/task_view.inc.php';
     <main class="main-content">
         <div class="task_container">
             <div class="task_details">
-
-                <div class="task_desc">
-                    <h4>Task Name: &emsp; <?php show_task_name(); ?></h4>
-                    <br>
-                    <h4>Task Desc: </h4>
-                    <p><?php show_task_desc(); ?></p>
+                <div class="task-name">
+                    <h4>Task Name: <p><?php show_task_name(); ?></p>
+                    </h4>
                 </div>
-                <br>
-                <br>
-                <h4>Assigned To:</h4>
+                <div class="task_desc">
+                    <h4>Task Description: <p><?php show_task_desc(); ?></p>
+                    </h4>
+                </div>
+            </div>
+            <br>
+            <div class="task-assigned-tb">
+                <label>Assigned To:</label>
                 <section class="table-body">
                     <table>
                         <thead>
@@ -41,10 +43,8 @@ require_once 'includes/task_view.inc.php';
                         </tbody>
                     </table>
                 </section>
-
-
             </div>
-            <button class="back-button" onclick="window.history.back()"><i class="fas fa-arrow-left"></i></button>
+            <button class="back-button" onclick="window.history.back()"><i class="fa-solid fa-angle-left"></i></button>
         </div>
     </main>
 </body>

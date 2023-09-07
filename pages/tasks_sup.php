@@ -10,7 +10,7 @@ include 'includes/tasks_list_view.inc.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" id="themeLink" type="text/css" href="./css/themes/dark.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="./css/dashboard_sup.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/tasks_sup.css?v=<?php echo time(); ?>">
     <title>Dashboard</title>
 </head>
 
@@ -28,7 +28,7 @@ include 'includes/tasks_list_view.inc.php';
                 <table>
                     <thead>
                         <tr>
-                            <th>Task Name</th>
+                            <th>Name</th>
                             <th>Status</th>
                             <th>Done</th>
                             <th>Due Date</th>

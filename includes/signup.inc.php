@@ -7,12 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
     $profile_pic_file = $_FILES["prfl-pic"];
 
-    // if (!empty($_FILES["prfl-pic"])) {
-    //     $profile_pic_file = $_FILES["prfl-pic"];
-    // } else {
-    //     $profile_pic_file = [];
-    // }
-
     try {
         require_once 'db-handler.php';
         require_once 'signup_model.inc.php';
