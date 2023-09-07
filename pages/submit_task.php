@@ -12,7 +12,8 @@ require_once 'includes/task_view.inc.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" id="themeLink" type="text/css" href="./css/themes/dark.css">
-    <link rel="stylesheet" href="./css/settings.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./css/dropdown.css?v=<?php echo time(); ?>">
+    <!-- <link rel="stylesheet" href="./css/settings.css?v=<?php echo time(); ?>"> -->
     <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <title>Submit Task</title>
 </head>
@@ -26,10 +27,13 @@ require_once 'includes/task_view.inc.php';
                     <form id="form1" action="./includes/task_file.inc.php" method="post" enctype="multipart/form-data">
                         <div class="assign-container">
                             <label for="tasks">Select A Task</label>
-                            <div class="select-container">
-                                <select class="select-box" name="task_id" id="tasks">
-                                    <?php show_task_options(); ?>
-                                </select>
+                            <div class="drop-container">
+                                <div class="select-container">
+                                    <select name="task_id" id="tasks">
+                                        <?php show_task_options();
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                             <br>
                             <label for="tasks">Select A File</label>
@@ -58,6 +62,8 @@ require_once 'includes/task_view.inc.php';
                 fileNameSpan.textContent = 'No file selected';
             }
         }
+
+        //dropdown
     </script>
 
 </body>

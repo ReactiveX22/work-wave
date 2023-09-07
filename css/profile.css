@@ -14,7 +14,7 @@
   color: var(--primary-text-color);
   border: 1px solid var(--secondary-border-color);
   border-radius: 5px;
-  box-shadow: 0px 0px 4px var(--primary-text-color);
+  /* box-shadow: 0px 0px 4px var(--primary-text-color); */
 }
 
 .profile_pic_container {
@@ -28,9 +28,10 @@
   justify-content: center;
   background-color: var(--primary-background-color);
   color: var(--primary-text-color);
-  border: 1px solid var(--secondary-border-color);
-  border-radius: 50%;
-  box-shadow: 0px 0px 4px var(--primary-text-color);
+  border: 3px solid var(--secondary-border-color);
+  border-radius: 100%;
+  filter: grayscale(30%);
+  /* box-shadow: 0px 0px 4px var(--primary-text-color); */
 }
 
 img {
@@ -52,7 +53,7 @@ img {
   color: var(--primary-text-color);
   border: 1px solid var(--secondary-border-color);
   border-radius: 5px;
-  box-shadow: 0px 0px 4px var(--primary-text-color);
+  /* box-shadow: 0px 0px 4px var(--primary-text-color); */
 }
 
 .profile_details_table table,

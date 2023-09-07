@@ -200,7 +200,7 @@ tbody tr.hide {
 }
 
 tbody tr:hover {
-  background-color: #065fd445;
+  background-color: var(--secondary-tbody-color);
 }
 
 tbody tr.hide td,

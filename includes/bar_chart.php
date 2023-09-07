@@ -9,8 +9,19 @@
     <script>
         function createPieChart() {
             // Provide data for the pie chart
-            var incompleteTasks = 10;
-            var completedTasks = 20;
+            var incompleteTasks = <?php echo $_SESSION["emp_total_tasks_done"]; ?>;
+            var completedTasks = <?php echo $_SESSION["emp_pending_tasks"]; ?>;
+
+            const legendMargin = {
+                id: 'legendMargin',
+                beforeInit(chart, legend, options) {
+                    const fitValue = chart.legend.fit;
+                    chart.legend.fit = function fit() {
+                        fitValue.bind(chart.legend)();
+                        return this.height += 40;
+                    }
+                }
+            }
 
             // Create the pie chart
             var ctx = document.getElementById('myChart').getContext('2d');
@@ -31,9 +42,10 @@
                         data: data.map(d => d.data),
                         backgroundColor: ['#005C53', '#DBF227'],
                         hoverBackgroundColor: ['#AADEA7', '#D6D58E'],
-                        borderWidth: .1
+                        borderWidth: .25
                     }]
                 },
+
                 options: {
                     plugins: {
                         legend: {
@@ -43,9 +55,10 @@
                                     size: 10 // Set the font size in pixels
                                 },
                             }
-                        }
-                    }
-                }
+                        },
+                    },
+                },
+                plugins: [legendMargin]
             });
         }
 

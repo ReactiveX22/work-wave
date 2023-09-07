@@ -133,19 +133,19 @@ tbody tr:nth-child(even) {
 }
 
 .status {
-  padding: 0.4rem 0;
+  padding: 0.5rem;
   border-radius: 2rem;
   text-align: center;
 }
 
 .approved {
-  background-color: #22c1978b;
-  color: #2bffc6;
+  background-color: var(--secondary-status-blue-color);
+  color: var(--secondary-status-blue-text-color);
 }
 
 .pending {
-  background-color: #cce7197c;
-  color: #ffc904;
+  background-color: var(--secondary-status-yellow-color);
+  color: var(--secondary-status-yellow-text-color);
 }
 
 .action-btn-container {
@@ -202,7 +202,7 @@ tbody tr.hide {
 }
 
 tbody tr:hover {
-  background-color: #065fd445;
+  background-color: var(--secondary-tbody-color);
 }
 
 tbody tr.hide td,
