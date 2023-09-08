@@ -121,11 +121,14 @@ td {
 }
 
 thead th {
+  padding: 0.6rem 1rem;
   position: sticky;
   top: 0;
   left: 0;
-  background-color: var(--secondary-thead-color);
-  color: var(--primary-background-color);
+  background-color: var(--primary-blue-color);
+  color: var(--primary-white-color);
+  font-weight: 500;
+  cursor: pointer;
 }
 
 tbody tr:nth-child(even) {
@@ -139,13 +142,15 @@ tbody tr:nth-child(even) {
 }
 
 .approved {
-  background-color: #22c1978b;
-  color: #2bffc6;
+  opacity: 0.6;
+  border: 2px solid var(--secondary-green-color);
+  color: var(--secondary-green-color);
 }
 
 .pending {
-  background-color: #cce7197c;
-  color: #ffc904;
+  opacity: 0.6;
+  border: 2px solid var(--secondary-red-color);
+  color: var(--secondary-red-color);
 }
 
 .action-btn-container {

@@ -29,6 +29,8 @@ function show_completed_tasks()
         $employee_total_tasks_done = $_SESSION["emp_total_tasks_done"];
 
         echo '<p class="amount_num">' . $employee_total_tasks_done . '</p>';
+    } else {
+        echo '<p class="amount_num">0</p>';
     }
 }
 
@@ -39,9 +41,20 @@ function show_incomplete_tasks()
         $emp_pending_tasks = $_SESSION["emp_pending_tasks"];
 
         echo '<p class="amount_num">' . $emp_pending_tasks . '</p>';
+    } else {
+        echo '<p class="amount_num">0</p>';
     }
 }
 
+function show_submitted_tasks()
+{
+    if (isset($_SESSION["emp_submitted_tasks"])) {
+        $emp_submitted_tasks = $_SESSION["emp_submitted_tasks"];
+        echo '<p class="amount_num">' . $emp_submitted_tasks . '</p>';
+    } else {
+        echo '<p class="amount_num">0</p>';
+    }
+}
 function show_balance()
 {
     if (isset($_SESSION["employee_balance"])) {

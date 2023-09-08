@@ -4,23 +4,24 @@
   align-items: center;
   justify-content: center;
 
-  /* Experimental */
-  /* margin-left: 7rem; */
+  gap: 2.5rem;
+  margin-left: 3.5rem;
 }
 
 .dashboard_container {
-  width: 950px;
+  min-width: 750px;
   height: 600px;
   margin-top: 2.5rem;
   padding: 1rem;
   overflow: scroll;
-  /* margin-right: 2.5rem; */
-  /* display: flex;
-  align-items: flex-start;
-  justify-content: center; */
   background-color: var(--primary-box-color);
-  box-shadow: 5px 5px 7px var(--primary-shadow-color);
+  box-shadow: 5px 7px 5px var(--primary-shadow-color);
   border-radius: 1.5rem;
+}
+
+h1 {
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .table__header {
@@ -83,14 +84,6 @@
   transition: 0.2s;
 }
 
-td img {
-  width: 36px;
-  height: 36px;
-  margin-right: 0.5rem;
-  border-radius: 50%;
-  vertical-align: middle;
-}
-
 .employees {
   text-align: left;
 }
@@ -129,8 +122,9 @@ thead th {
   position: sticky;
   top: 0;
   left: 0;
-  background-color: var(--secondary-thead-color);
-  color: var(--primary-background-color);
+  background-color: var(--primary-blue-color);
+  color: var(--primary-white-color);
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -146,13 +140,15 @@ tbody tr:nth-child(even) {
 }
 
 .approved {
-  background-color: var(--secondary-status-blue-color);
-  color: var(--secondary-status-blue-text-color);
+  opacity: 0.6;
+  border: 2px solid var(--secondary-green-color);
+  color: var(--secondary-green-color);
 }
 
 .pending {
-  background-color: var(--secondary-status-yellow-color);
-  color: var(--secondary-status-yellow-text-color);
+  opacity: 0.6;
+  border: 2px solid var(--secondary-red-color);
+  color: var(--secondary-red-color);
 }
 
 .action-btn-container {
@@ -186,16 +182,6 @@ button {
 
 .approve-btn:hover {
   box-shadow: 0px 0px 8px var(--primary-blue-color);
-}
-
-.delete-btn {
-  color: var(--primary-white-color);
-  background-color: var(--primary-red-color);
-  box-shadow: 0px 0px 0px var(--primary-red-color);
-}
-
-.delete-btn:hover {
-  box-shadow: 0px 0px 8px var(--primary-red-color);
 }
 
 tbody tr {

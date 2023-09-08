@@ -22,7 +22,7 @@ include 'includes/tasks_list_view.inc.php';
             <section class="table__header">
                 <h1>Employees</h1>
                 <div class="input-group">
-                    <input type="search" placeholder="Search Data..." id="searchInputEmployees">
+                    <input type="search" placeholder="Search Employees..." id="searchInputEmployees">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </section>
@@ -45,7 +45,7 @@ include 'includes/tasks_list_view.inc.php';
             <section class="table__header">
                 <h1>Created Tasks</h1>
                 <div class="input-group">
-                    <input type="search" placeholder="Search Data..." id="searchInputCreatedTasks">
+                    <input type="search" placeholder="Search Tasks..." id="searchInputCreatedTasks">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </section>

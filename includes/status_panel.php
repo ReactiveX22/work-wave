@@ -16,5 +16,11 @@
                 <?php show_incomplete_tasks() ?>
             </div>
         </div>
+        <div class="card">
+            <div class="title">Submitted Tasks</div>
+            <div class="amount_box">
+                <?php show_submitted_tasks() ?>
+            </div>
+        </div>
     </div>
 </div>

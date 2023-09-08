@@ -1,5 +1,4 @@
 <?php
-require_once 'employee_list_contr.inc.php';
 
 try {
     require_once 'db-handler.php';

@@ -51,8 +51,6 @@ select:hover {
   box-shadow: 0 0.1rem 0.5rem var(--secondary-tbody-color);
 }
 
-@import url("common.css");
-
 .main-content {
   height: 100vh;
   display: flex;

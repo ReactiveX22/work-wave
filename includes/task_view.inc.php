@@ -76,13 +76,13 @@ function show_task_assigned_to()
 
                 echo "<tr>";
                 echo '<td class="employees"><img src="' . $image_source . '" alt="Profile Picture">' . $task['username'] . '</td>';
-                echo "<td>" . $task['has_file'] . "</td>";
+                echo '<td> <div class="status ' . ($task['has_file'] == 'Yes' ? 'approved' : 'pending') . '">' . $task['has_file'] . '</div></td>';
                 echo '<td>';
                 echo '<div class="action-btn-container">';
                 echo '<form action="includes/manage_task.inc.php" method="post">';
                 echo '<input type="hidden" name="file_path" value="' . $task['file_path'] . '"/>';
                 echo '<input type="hidden" name="action" value="download"/>';
-                echo '<button class="action-btn approve-btn" type="submit" name="submitButton"><p>Download</p></button>';
+                echo '<button class="action-btn approve-btn" type="submit" name="submitButton"><i class="fa-solid fa-download"></i></button>';
                 echo '</form>';
                 echo '</div>';
                 echo '</td>';

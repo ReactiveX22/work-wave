@@ -18,11 +18,11 @@ include 'includes/dashboard.inc.php';
     <!-- main -->
     <main class="main-content">
         <div class="dashboard_container">
-            <div class="chart_part">
-                <?php include_once 'includes/bar_chart.php'; ?>
-            </div>
             <div class="status_part">
                 <?php include_once 'includes/status_panel.php'; ?>
+            </div>
+            <div class="chart_part">
+                <?php include_once 'includes/bar_chart.php'; ?>
             </div>
         </div>
     </main>

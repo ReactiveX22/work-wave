@@ -172,3 +172,19 @@ function get_emp_pending_tasks(object $pdo, $user_id)
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result['emp_total_task_done'];
 }
+
+function get_emp_submitted_tasks(object $pdo, $user_id)
+{
+    $query = "SELECT COUNT(*) AS emp_submitted_task FROM task_files WHERE user_id = :user_id;";
+
+    $stmt = $pdo->prepare($query);
+    $stmt->bindParam(":user_id", $user_id);
+    $stmt->execute();
+
+    if ($stmt->rowCount() == 0) {
+        return 0;
+    }
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['emp_submitted_task'];
+}

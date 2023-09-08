@@ -18,12 +18,10 @@
 
   --primary-red-color: #ff3f41;
   --primary-blue-color: #4a43d0;
-  --secondary-blue-color: #7772dc;
+  --primary-green-color: #579b00;
   --primary-white-color: #f2ecff;
 
-  --secondary-status-yellow-color: #ff6556;
-  --secondary-status-yellow-text-color: #742e27;
-
-  --secondary-status-blue-color: #92dd77;
-  --secondary-status-blue-text-color: #334d29;
+  --secondary-blue-color: #7772dc;
+  --secondary-green-color: #b1ff4d;
+  --secondary-red-color: #ff1c2b;
 }

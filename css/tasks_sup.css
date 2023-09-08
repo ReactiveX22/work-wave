@@ -4,23 +4,24 @@
   align-items: center;
   justify-content: center;
 
-  /* Experimental */
-  margin-left: 7rem;
+  gap: 2.5rem;
+  margin-left: 3.5rem;
 }
 
 .dashboard_container {
   width: 950px;
   height: 600px;
   margin-top: 2.5rem;
-  margin-right: 2.5rem;
   padding: 1rem;
   overflow: scroll;
-  /* display: flex;
-  align-items: flex-start;
-  justify-content: center; */
   background-color: var(--primary-box-color);
   box-shadow: 5px 7px 5px var(--primary-shadow-color);
   border-radius: 1.5rem;
+}
+
+h1 {
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .table__header {
@@ -129,8 +130,9 @@ thead th {
   position: sticky;
   top: 0;
   left: 0;
-  background-color: var(--secondary-thead-color);
-  color: var(--primary-background-color);
+  background-color: var(--primary-blue-color);
+  color: var(--primary-white-color);
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -146,15 +148,16 @@ tbody tr:nth-child(even) {
 }
 
 .approved {
-  background-color: var(--secondary-status-blue-color);
-  color: var(--secondary-status-blue-text-color);
+  opacity: 0.6;
+  border: 2px solid var(--secondary-green-color);
+  color: var(--secondary-green-color);
 }
 
 .pending {
-  background-color: var(--secondary-status-yellow-color);
-  color: var(--secondary-status-yellow-text-color);
+  opacity: 0.6;
+  border: 2px solid var(--secondary-red-color);
+  color: var(--secondary-red-color);
 }
-
 .action-btn-container {
   display: flex;
   align-items: center;

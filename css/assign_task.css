@@ -42,8 +42,6 @@ select:hover {
   border-bottom: 3px solid var(--primary-blue-color);
 }
 
-@import url("common.css");
-
 .main-content {
   height: 100vh;
   display: flex;

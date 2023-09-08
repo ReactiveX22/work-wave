@@ -16,33 +16,34 @@ require_once 'includes/task_view.inc.php';
 <body>
     <main class="main-content">
         <div class="task_container">
-            <div class="task_details">
-                <div class="task-name">
-                    <h4>Task Name: <p><?php show_task_name(); ?></p>
-                    </h4>
+            <div class="task_details_tb_cont">
+                <div class="task_details">
+                    <div class="task_name">
+                        <h4>
+                            <p><?php show_task_name(); ?></p>
+                        </h4>
+                    </div>
+                    <div class="task_desc">
+                        <p><?php show_task_desc(); ?></p>
+                    </div>
                 </div>
-                <div class="task_desc">
-                    <h4>Task Description: <p><?php show_task_desc(); ?></p>
-                    </h4>
+                <div class="task-assigned-tb">
+                    <label>Assigned To:</label>
+                    <section class="table-body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Submitted</th>
+                                    <th>File</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php show_task_assigned_to(); ?>
+                            </tbody>
+                        </table>
+                    </section>
                 </div>
-            </div>
-            <br>
-            <div class="task-assigned-tb">
-                <label>Assigned To:</label>
-                <section class="table-body">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Submitted</th>
-                                <th>File</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php show_task_assigned_to(); ?>
-                        </tbody>
-                    </table>
-                </section>
             </div>
             <button class="back-button" onclick="window.location.href='index.php?page=tasks'"><i class="fa-solid fa-angle-left"></i></button>
         </div>

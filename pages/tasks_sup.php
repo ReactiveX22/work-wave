@@ -20,7 +20,7 @@ include 'includes/tasks_list_view.inc.php';
             <section class="table__header">
                 <h1>Created Tasks</h1>
                 <div class="input-group">
-                    <input type="search" placeholder="Search Data...">
+                    <input type="search" placeholder="Search Tasks...">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </section>
