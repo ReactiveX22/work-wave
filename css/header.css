@@ -1,18 +1,27 @@
 @import url("common.css");
 
-.nav_header {
+.nheader {
   position: absolute;
-  background-color: var(--primary-top-nav-bgcolor);
-  color: var(--primary-top-nav-tcolor);
   width: 100%;
-  padding: 0px 0;
-  box-shadow: 0px 0px 3px var(--secondary-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav_header {
+  background-color: var(--primary-box-color);
+  color: var(--primary-text-color);
+  width: fit-content;
+  padding: 0.6rem 4rem;
+  border-radius: 5rem;
+  box-shadow: 0px 0px 10px var(--primary-shadow-color);
 }
 
 .nav_header .menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 25rem;
   padding: 0 10px;
 }
 
@@ -27,31 +36,46 @@
 .menu ul {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .menu ul li {
   display: flex;
   align-items: center;
+  justify-content: center;
   list-style: none;
   margin-left: 10px;
   padding: 2px 0;
 }
 
 .menu ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 400;
   font-size: 14px;
   text-decoration: none;
   color: var(--primary-top-nav-tcolor);
   border-radius: 5px;
+  min-width: 5rem;
   padding: 6px 15px;
   box-shadow: 0px 0px 0px var(--primary-background-color);
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .menu ul li a:hover {
-  background-color: var(--primary-top-nav-tcolor);
-  color: var(--primary-top-nav-bgcolor);
-  box-shadow: 0px 0px 5px var(--primary-background-color);
+  color: var(--secondary-blue-color);
+}
+
+#signup-btn {
+  background-color: var(--primary-blue-color);
+  color: var(--primary-top-nav-tcolor);
+  box-shadow: 0px 0px 4px var(--primary-blue-color);
+}
+
+#signup-btn:hover {
+  background-color: var(--primary-blue-color);
+  box-shadow: 0px 0px 10px var(--primary-blue-color);
 }
 
 .menu ul li .dark-mode-toggle {
@@ -65,7 +89,5 @@
 }
 
 .menu ul li .dark-mode-toggle:hover {
-  background-color: var(--primary-top-nav-tcolor);
-  color: var(--primary-top-nav-bgcolor);
-  box-shadow: 0px 0px 5px var(--primary-background-color);
+  color: var(--secondary-blue-color);
 }

@@ -68,11 +68,10 @@ select:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: var(--primary-background-color);
+  background-color: var(--primary-box-color);
   color: var(--primary-text-color);
-  border: 1px solid var(--secondary-border-color);
-  border-radius: 5px;
-  /* box-shadow: 0px 0px 4px var(--primary-text-color); */
+  border-radius: 0.6rem;
+  box-shadow: 5px 7px 5px var(--primary-shadow-color);
   position: relative;
 }
 
@@ -91,7 +90,6 @@ h2 {
   margin: 2rem;
   width: 100%;
   height: fit-content;
-  background-color: var(--primary-background-color);
   color: var(--primary-text-color);
 }
 
@@ -152,23 +150,20 @@ h2 {
 }
 
 button {
-  width: 45%;
+  width: 50%;
   min-height: 30px;
-  position: absolute;
-  bottom: 4rem;
-  /* margin: 30px 0 50px 0; */
   font-weight: 400;
   font-size: 18px;
-  color: var(--secondary-thead-color);
+  color: var(--primary-text-color);
   background-color: var(--primary-blue-color);
-  box-shadow: 0px 0px 0px var(--primary-blue-color);
+  box-shadow: 1px 1px 5px var(--primary-shadow-color);
   transition: box-shadow 0.3s ease-in-out;
   border: none;
-  border-radius: 3px;
-}
-
-button:hover {
-  box-shadow: 0px 0px 8px var(--primary-blue-color);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  position: absolute;
+  bottom: 4rem;
+  padding: 0.5rem;
 }
 
 .assign-container {
@@ -207,6 +202,7 @@ textarea {
   border: none;
   background-color: transparent;
   color: var(--primary-blue-color);
+  box-shadow: 1px 1px 2px var(--primary-blue-color);
   font-size: 1.2rem;
   cursor: pointer;
   text-decoration: none;

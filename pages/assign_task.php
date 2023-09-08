@@ -39,7 +39,6 @@ require_once 'includes/task_view.inc.php';
                                     <select name="user_id" id="tasks">
                                         <?php show_emps_options(); ?>
                                     </select>
-
                                 </div>
                             </div>
                         </div>
@@ -47,7 +46,7 @@ require_once 'includes/task_view.inc.php';
                 </div>
                 <button type="submit" form="form1">Assign Task</button>
             </div>
-            <button class="back-button" onclick="window.location.href='index.php?page=tasks'"><i class="fas fa-arrow-left"></i></button>
+            <button class="back-button" onclick="window.location.href='index.php?page=tasks'"><i class="fa-solid fa-angle-left"></i></button>
         </div>
     </main>
 </body>

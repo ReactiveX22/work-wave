@@ -4,33 +4,35 @@
   width: 3.5rem;
   height: 100%;
   position: fixed;
-  margin-top: 2.35rem;
-  background-color: var(--primary-background-color);
-  transition: width 600ms ease;
+  margin-top: 5rem;
+  border-radius: 5rem;
+  background-color: var(--primary-box-color);
+  transition: width 600ms ease, border-radius 0.2s ease-in-out;
   z-index: 1;
 }
 
 .sidebar:hover {
   width: 10rem;
+  border-radius: 1rem;
 }
 
 .sidebar-nav {
-  border-radius: 5px;
+  border-radius: inherit;
   list-style: none;
   padding: 0;
-  padding-top: 2rem;
+  padding-top: 4rem;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
-  border-right: 1px solid var(--secondary-border-color);
-  box-shadow: 0 0 0.1rem var(--secondary-border-color);
+  /* border-right: 1px solid var(--primary-blue-color); */
+  transition-property: inherit;
+  box-shadow: 4px 0px 5px var(--primary-shadow-color);
 }
 
 .sidebar-nav:hover {
-  box-shadow: 0 0 0.8rem var(--secondary-border-color);
-  transition: 0.2s;
+  border-radius: inherit;
 }
 
 .nav-item:last-child {
@@ -45,19 +47,21 @@
   text-decoration: none;
   color: var(--primary-text-color);
   filter: var(--primary-text-color) opacity(0.7);
-  transition: 600ms ease;
+  transition: background-color 0.1s ease;
+  border-bottom: 0px solid var(--primary-blue-color);
 }
 
 .nav-link:hover {
   filter: grayscale(0%) opacity(1);
-  background: var(--secondary-border-color);
-  color: var(--primary-text-color);
+  background-color: var(--secondary-border-color);
+  border-bottom: 2.25px solid var(--primary-blue-color);
 }
 
 .nav-link i {
   margin-left: 1rem;
   margin-right: 1rem;
   font-size: 1rem;
+  color: var(--secondary-blue-color);
 }
 
 .link-text {
@@ -86,10 +90,8 @@
   position: absolute;
   left: 100%;
   top: 0;
-  background-color: var(--primary-background-color);
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 1px var(--primary-text-color);
-  transition: width 300ms ease;
+  background-color: var(--primary-box-color);
+  box-shadow: 5px 5px 5px var(--primary-shadow-color);
 }
 
 #settings:hover .nav-sub {
@@ -109,13 +111,14 @@
   color: var(--primary-text-color);
   text-decoration: none;
   filter: var(--primary-text-color) opacity(0.7);
-  transition: 600ms ease;
+  border-bottom: 0px solid var(--primary-blue-color);
+  transition: background-color 0.3s ease;
 }
 
 .nav-sub-link:hover {
   filter: grayscale(0%) opacity(1);
-  background: var(--secondary-border-color);
-  color: var(--primary-text-color);
+  background-color: var(--secondary-border-color);
+  border-bottom: 2.25px solid var(--primary-blue-color);
 }
 
 .nav-sub-link i {

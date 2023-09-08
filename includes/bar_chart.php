@@ -9,8 +9,8 @@
     <script>
         function createPieChart() {
             // Provide data for the pie chart
-            var incompleteTasks = <?php echo $_SESSION["emp_total_tasks_done"]; ?>;
-            var completedTasks = <?php echo $_SESSION["emp_pending_tasks"]; ?>;
+            var incompleteTasks = <?php echo $_SESSION["emp_pending_tasks"]; ?>;
+            var completedTasks = <?php echo $_SESSION["emp_total_tasks_done"]; ?>;
 
             const legendMargin = {
                 id: 'legendMargin',
@@ -40,8 +40,10 @@
                     labels: data.map(d => d.label),
                     datasets: [{
                         data: data.map(d => d.data),
-                        backgroundColor: ['#005C53', '#DBF227'],
-                        hoverBackgroundColor: ['#AADEA7', '#D6D58E'],
+                        backgroundColor: ['#4a43d0', '#7772dc'],
+                        hoverBackgroundColor: ['#4a43d0', '#7772dc'],
+                        // backgroundColor: ['#005C53', '#DBF227'],
+                        // hoverBackgroundColor: ['#AADEA7', '#D6D58E'],
                         borderWidth: .25
                     }]
                 },

@@ -36,7 +36,7 @@ require_once 'includes/settings_view.inc.php';
                 </div>
                 <button type="submit" form="form1">Update</button>
             </div>
-            <button class="back-button" onclick="window.location.href='index.php?page=dashboard'"><i class="fas fa-arrow-left"></i></button>
+            <button class="back-button" onclick="window.location.href='index.php?page=dashboard'"><i class="fa-solid fa-angle-left"></i></button>
         </div>
     </main>
 </body>

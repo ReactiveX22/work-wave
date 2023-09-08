@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once 'config_session.inc.php';
 
         $username = $_SESSION["user_username"];
-
+        $user_id = $_SESSION["user_id"];
         // error handlers
         $errors = [];
 
@@ -29,8 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
             $result = get_user($pdo, $username);
-            $current_role = get_user_role_id($pdo, $result["user_id"]);
-            $pending_role_id = get_user_pending_role_id($pdo, $result["user_id"]);
+
+            $current_role = get_user_role_id($pdo, $user_id);
+            $pending_role_id = get_user_pending_role_id($pdo, $user_id);
             $_SESSION["user_pending_role"] = get_role_name($pdo, $pending_role_id);
 
 
@@ -46,10 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: ../index.php?page=request_role");
             die();
         } else {
-            set_pending_req_role($pdo, $_SESSION["user_id"], $role);
-            $_SESSION["user_role"] = get_user_role_name($pdo, $_SESSION["user_id"]);
-            $_SESSION["user_role_id"] = get_user_role_id($pdo, $_SESSION["user_id"]);
+            set_pending_req_role($pdo, $user_id, $role);
+            $_SESSION["user_role"] = get_user_role_name($pdo, $user_id);
+            $_SESSION["user_role_id"] = get_user_role_id($pdo, $user_id);
             $_SESSION["user_pending_role"] = get_role_name($pdo, $pending_role_id);
+
             $_SESSION['password_changed'] = "Your role is requested.";
         }
 

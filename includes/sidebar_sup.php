@@ -22,15 +22,15 @@
             </a>
             <ul class="nav-sub">
                 <li class="nav-sub-item">
-                    <a class="nav-sub-link" href="index.php?page=create_task">
-                        <i class="fa-solid fa-list-check"></i>
-                        <span class="sub-link-text">Create A Task</span>
-                    </a>
-                </li>
-                <li class="nav-sub-item">
                     <a class="nav-sub-link" href="index.php?page=tasks">
                         <i class="fa-solid fa-user-gear"></i>
                         <span class="sub-link-text">Manage Tasks</span>
+                    </a>
+                </li>
+                <li class="nav-sub-item">
+                    <a class="nav-sub-link" href="index.php?page=create_task">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span class="sub-link-text">Create A Task</span>
                     </a>
                 </li>
                 <li class="nav-sub-item">

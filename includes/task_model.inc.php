@@ -117,30 +117,37 @@ WHERE tem.task_id = :task_id
     return $result["done_percentage"];
 }
 
-function get_task_assigned_to_list(object $pdo, $task_id, $sup_id)
+function get_task_assigned_to_list(object $pdo, $task_id)
 {
-    $query = "SELECT 
+    $query = "SELECT
     u.username,
     u.image_path,
-    CASE 
-        WHEN tf.task_id = tem.task_id AND tf.file_path IS NOT NULL THEN 'Yes'
-        ELSE 'No' 
+    CASE
+        WHEN tf.user_id IS NOT NULL THEN 'Yes'
+        ELSE 'No'
     END AS has_file,
-    CASE 
-        WHEN tf.task_id = tem.task_id AND tf.file_path IS NOT NULL THEN tf.file_path 
-        ELSE NULL 
+    CASE
+        WHEN tf.user_id IS NOT NULL THEN tf.file_path
+        ELSE NULL
     END AS file_path
-FROM task_emp_map tem
-JOIN users u ON u.user_id = tem.user_id
-LEFT JOIN task_files tf ON tf.user_id = tem.user_id
-WHERE tem.task_id = :task_id
-    AND tem.user_id <> :sup_id;
-
+FROM
+    users u
+JOIN
+    (
+        SELECT DISTINCT user_id
+        FROM task_emp_map
+        WHERE task_id = 11
+    ) AS tm
+ON
+    u.user_id = tm.user_id
+LEFT JOIN
+    task_files tf
+ON
+    u.user_id = tf.user_id AND tf.task_id = :task_id;
 ";
 
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":task_id", $task_id);
-    $stmt->bindParam(":sup_id", $sup_id);
     $stmt->execute();
 
     if ($stmt->rowCount() == 0) {

@@ -34,8 +34,8 @@ include 'includes/login.inc.php';
                     </span>
                     <input type="password" name="password" id="password">
                 </div>
-                <p class="signup">Not a member? <a href="index.php?page=signup">Signup here.</a></p>
                 <button>login</button>
+                <!-- <p class="signup">Not a member? <a href="index.php?page=signup">Signup here.</a></p> -->
             </form>
         </div>
         <?php check_login_errors(); ?>

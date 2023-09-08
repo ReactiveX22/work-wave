@@ -47,7 +47,7 @@ require_once 'includes/signup_view.inc.php';
                     <input type="file" id="image" name="prfl-pic" accept="image/*" onchange="previewImage(this);">
                 </div>
 
-                <p class="signup">Already a member? <a href="index.php?page=login">Login here.</a></p>
+                <!-- <p class="signup">Already a member? <a href="index.php?page=login">Login here.</a></p> -->
                 <button>signup</button>
             </form>
         </div>

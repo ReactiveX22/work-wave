@@ -12,7 +12,7 @@
         <li class="nav-item">
             <a class="nav-link" href="index.php?page=dashboard">
                 <i class="fa-solid fa-chart-line"></i>
-                <span class="link-text">Dashboard</span>
+                <span class="link-text">Roles</span>
             </a>
         </li>
         <li class="nav-item">

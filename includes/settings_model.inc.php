@@ -15,6 +15,7 @@ function change_password(object $pdo, string $user_id, string $new_password)
 function get_user(object $pdo, string $username)
 {
     $query = "SELECT * FROM users WHERE username = :username;";
+
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":username", $username);
     $stmt->execute();
@@ -33,7 +34,8 @@ function get_user_role_id(object $pdo, $user_id)
 FROM
   user_roles ur
   JOIN users u ON ur.user_id = u.user_id
-  JOIN roles r ON ur.role_id = r.role_id;) WHERE user_id = :user_id;";
+  JOIN roles r ON ur.role_id = r.role_id) AS subquery WHERE user_id = :user_id ;";
+
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();
@@ -52,7 +54,8 @@ function get_user_role_name(object $pdo, $user_id)
 FROM
   user_roles ur
   JOIN users u ON ur.user_id = u.user_id
-  JOIN roles r ON ur.role_id = r.role_id;) WHERE user_id = :user_id;";
+  JOIN roles r ON ur.role_id = r.role_id) AS subquery WHERE user_id = :user_id ;";
+
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id);
     $stmt->execute();
@@ -105,7 +108,7 @@ function set_pending_req_role(object $pdo, $user_id, $req_role)
 
 function get_user_pending_role_id(object $pdo, $user_id)
 {
-    $query = "SELECT requested_role FROM pending_role_reqs WHERE user_id = :user_id;";
+    $query = "SELECT requested_role FROM pending_role_reqs WHERE user_id = :user_id ;";
 
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(":user_id", $user_id);

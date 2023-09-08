@@ -4,12 +4,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $task_name = $_POST["task_name"];
     $task_desc = $_POST["task_desc"];
     $due_date = date('Y-m-d', strtotime($_POST['due_date']));
+
     try {
         require_once 'db-handler.php';
         require_once 'settings_contr.inc.php';
         require_once 'task_model.inc.php';
         require_once 'config_session.inc.php';
-
 
         // error handlers
         $errors = [];

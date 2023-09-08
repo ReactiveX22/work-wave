@@ -25,6 +25,7 @@ FROM
   user_roles ur
   JOIN users u ON ur.user_id = u.user_id
   JOIN roles r ON ur.role_id = r.role_id) AS subquery WHERE user_id = :user_id ;";
+
   $stmt = $pdo->prepare($query);
   $stmt->bindParam(":user_id", $user_id);
   $stmt->execute();

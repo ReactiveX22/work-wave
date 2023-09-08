@@ -18,10 +18,8 @@
   /* display: flex;
   align-items: flex-start;
   justify-content: center; */
-  /* background-color: var(--primary-background-color); */
-  /* box-shadow: 0px 0px 10px var(--primary-text-color); */
-
-  border: 1px solid var(--secondary-border-color);
+  background-color: var(--primary-box-color);
+  box-shadow: 5px 7px 5px var(--primary-shadow-color);
   border-radius: 1.5rem;
 }
 
@@ -38,7 +36,7 @@
 .table__header .input-group {
   width: 30%;
   height: 100%;
-  background-color: var(--secondary-thead-color);
+  background-color: var(--secondary-border-color);
   padding: 0 0.8rem;
   border-radius: 2rem;
 
@@ -51,13 +49,13 @@
 
 .table__header .input-group:hover {
   width: 40%;
-  background-color: var(--secondary-thead-color);
   box-shadow: 0 0.1rem 0.4rem var(--secondary-border-color);
+  border-bottom: 3px solid var(--primary-blue-color);
 }
 
 .table__header .input-group i {
-  color: var(--primary-background-color);
-  width: auto;
+  color: var(--primary-text-color);
+  font-size: 0.7rem;
 }
 
 .table__header .input-group input {
@@ -74,15 +72,15 @@
   width: 95%;
   max-height: 85%;
   margin: 0.8rem auto;
-  background-color: var(--primary-background-color);
+  background-color: var(--primary-box-color);
   border: 1px solid var(--secondary-border-color);
   border-radius: 0.6rem;
   overflow: auto;
+  transition: 0.2s ease-in-out;
 }
 
 .table-body:hover {
-  box-shadow: 0 0.1rem 0.4rem var(--secondary-border-color);
-  transition: 0.2s;
+  border-bottom: 3px solid var(--primary-blue-color);
 }
 
 td img {

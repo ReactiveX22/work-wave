@@ -7,31 +7,29 @@
 
 .profile_container {
   margin-top: 2rem;
+  width: 500px;
   height: 600px;
-  width: 900px;
   display: flex;
-  background-color: var(--primary-background-color);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: var(--primary-box-color);
   color: var(--primary-text-color);
-  border: 1px solid var(--secondary-border-color);
-  border-radius: 5px;
-  /* box-shadow: 0px 0px 4px var(--primary-text-color); */
+  border-radius: 0.6rem;
+  box-shadow: 5px 7px 5px var(--primary-shadow-color);
 }
 
 .profile_pic_container {
-  margin: 2rem;
+  width: 200px;
   height: 200px;
-  max-width: 200px;
-  padding: 0px;
   display: flex;
-  flex-grow: 2;
   align-items: center;
   justify-content: center;
-  background-color: var(--primary-background-color);
   color: var(--primary-text-color);
   border: 3px solid var(--secondary-border-color);
   border-radius: 100%;
   filter: grayscale(30%);
-  /* box-shadow: 0px 0px 4px var(--primary-text-color); */
 }
 
 img {
@@ -44,12 +42,12 @@ img {
 }
 
 .profile_details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.25rem;
-  margin: 2rem;
   height: fit-content;
-  flex-grow: 3;
   padding: 2rem;
-  background-color: var(--primary-background-color);
   color: var(--primary-text-color);
   border: 1px solid var(--secondary-border-color);
   border-radius: 5px;

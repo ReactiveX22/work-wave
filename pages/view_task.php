@@ -44,7 +44,7 @@ require_once 'includes/task_view.inc.php';
                     </table>
                 </section>
             </div>
-            <button class="back-button" onclick="window.history.back()"><i class="fa-solid fa-angle-left"></i></button>
+            <button class="back-button" onclick="window.location.href='index.php?page=tasks'"><i class="fa-solid fa-angle-left"></i></button>
         </div>
     </main>
 </body>
