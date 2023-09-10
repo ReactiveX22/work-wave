@@ -9,15 +9,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-direction: column;
+  /* flex-direction: column; */
   gap: 1rem;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; */
 }
 
 .card {
-  width: 150px;
+  min-width: 120px;
+  min-height: 120px;
   background-color: var(--primary-box-color);
   color: var(--primary-text-color);
   border-bottom: 2px solid var(--primary-blue-color);
@@ -29,7 +30,7 @@
   padding: 15px;
   animation: fadeinH1 0.5s ease-in-out;
   box-shadow: 5px 7px 5px var(--primary-shadow-color);
-  transition: color 300ms ease, background-color 300ms ease;
+  transition: color 300ms ease, box-shadow 300ms ease-in-out;
 }
 
 .card:hover {

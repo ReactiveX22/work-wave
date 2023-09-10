@@ -1,15 +1,16 @@
 .chart_container {
   display: flex;
   align-items: center;
+  justify-content: center;
+
   padding: 2rem;
-  margin: 2rem;
+  width: 100%;
   background-color: var(--primary-box-color);
   border-bottom: 2px solid var(--primary-blue-color);
   border-radius: 5px;
   box-shadow: 5px 7px 5px var(--primary-shadow-color);
-  width: 350px;
   animation: fadeinchart 0.7s ease-in-out;
-  transition: box-shadow 200ms ease;
+  transition: box-shadow 200ms ease-in-out;
 }
 
 .chart_container:hover {

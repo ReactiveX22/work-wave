@@ -40,8 +40,8 @@
                     labels: data.map(d => d.label),
                     datasets: [{
                         data: data.map(d => d.data),
-                        backgroundColor: ['#4a43d0', '#7772dc'],
-                        hoverBackgroundColor: ['#4a43d0', '#7772dc'],
+                        backgroundColor: ['#569f59', '#bc534e'],
+                        hoverBackgroundColor: ['#569f59', '#bc534e'],
                         // backgroundColor: ['#005C53', '#DBF227'],
                         // hoverBackgroundColor: ['#AADEA7', '#D6D58E'],
                         borderWidth: .25

@@ -10,19 +10,22 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 3rem;
 
-  width: fit-content;
+  width: 500px;
   padding: 1rem;
-  background-color: var(--primary-background-color);
+  margin-top: 3rem;
 }
 
 .chart_part {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
+
+  width: 85%;
 }
 
 .status_part {
-  height: 100%;
+  /* height: 100%; */
+  width: 85%;
 }

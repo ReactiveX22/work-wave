@@ -12,7 +12,7 @@
         <li class="nav-item">
             <a class="nav-link" href="index.php?page=dashboard">
                 <i class="fa-solid fa-users"></i>
-                <span class="link-text">Employees</span>
+                <span class="link-text">Dashboard</span>
             </a>
         </li>
         <li class="nav-item" id="settings">

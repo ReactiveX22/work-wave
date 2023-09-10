@@ -6,11 +6,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Prompt", sans-serif;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Raleway", sans-serif; */
   background-color: var(--primary-background-color);
   color: var(--primary-text-color);
 }
