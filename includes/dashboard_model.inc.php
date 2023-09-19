@@ -19,17 +19,6 @@ function get_total_worked_hours(object $pdo, $employee_id)
     return $result['total_worked_hours'];
 }
 
-function get_work_sessions(object $pdo, $employee_id)
-{
-    $query = "SELECT * FROM work_sessions WHERE employee_id = :employee_id;";
-
-    $stmt = $pdo->prepare($query);
-    $stmt->bindParam(":employee_id", $employee_id);
-    $stmt->execute();
-
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $results;
-}
 
 function get_balance(object $pdo, $employee_id)
 {
@@ -60,25 +49,6 @@ function get_user_total_pending_balance(object $pdo, $user_id)
     return $result;
 }
 
-
-function get_worked_hours_array(object $pdo, $employee_id)
-{
-    $query = "SELECT * FROM work_sessions WHERE employee_id = :employee_id ORDER BY start_timestamp;";
-
-    $stmt = $pdo->prepare($query);
-    $stmt->bindParam(":employee_id", $employee_id);
-    $stmt->execute();
-
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    $workedHoursArray = array();
-
-    foreach ($results as $result) {
-        $workedHoursArray[] = $result["worked_hours"];
-    }
-
-    return $workedHoursArray;
-}
 
 function getLast7Days()
 {

@@ -11,6 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         require_once 'task_model.inc.php';
         require_once 'task_contr.inc.php';
 
+        $user_id = $_SESSION["user_id"];
+
         // error handlers
         $errors = [];
 
@@ -21,25 +23,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $errors["wrong-filetype"] = "Wrong file type!";
             } elseif (is_file_size_too_big($task_file)) {
                 $errors["file-toobig"] = "File size is too big!";
+            } elseif (is_file_exists($pdo, $task_id, $user_id)) {
+                $errors["file-exists"] = "File already exists!";
             }
         }
 
         if ($errors) {
-            $_SESSION['errors_signup'] = $errors;
-
-            $signup_data = [
-                "username" => $username,
-                "email" => $email,
-            ];
-
-            $_SESSION["signup_data"] = $signup_data;
+            $_SESSION['errors_files'] = $errors;
 
             header("Location: ../index.php?page=submit_task");
             die();
         }
 
         submit_task($pdo, $_SESSION["user_username"], $_SESSION["user_id"], $task_id, $task_file);
-
+        $_SESSION['task_submit_success'] = 'Task Submitted Successfully!';
         header("Location: ../index.php?page=submit_task");
         die();
 

@@ -3,6 +3,22 @@
 // type declaration
 declare(strict_types=1);
 
+function is_file_exists($pdo, $task_id, $user_id)
+{
+    $query = "SELECT * FROM task_files WHERE user_id = :user_id AND task_id = :task_id LIMIT 1";
+
+    $stmt = $pdo->prepare($query);
+
+    $stmt->bindParam(":user_id", $user_id);
+    $stmt->bindParam(":task_id", $task_id);
+
+    $stmt->execute();
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result ? true : false;
+}
+
 function create_task(object $pdo, $user_id, $task_name, $task_desc, $due_date)
 {
     $query = "INSERT INTO tasks (task_name, task_desc, due_date) VALUES (:task_name, :task_desc, :due_date);";

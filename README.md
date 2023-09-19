@@ -2,7 +2,7 @@
 
 A project for DBMS Course.
 
-Employee Task Management, Visualizer.
+Employee Task Management System, Visualizer.
 
 Live Site: http://workwave.free.nf (not working currently)
 

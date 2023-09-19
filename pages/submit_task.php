@@ -64,7 +64,7 @@ require_once 'includes/task_view.inc.php';
 
         //dropdown
     </script>
-
+    <?php check_taskfile_errors(); ?>
 </body>
 
 </html>

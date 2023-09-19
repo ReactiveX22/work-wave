@@ -99,3 +99,33 @@ function show_task_assigned_to()
         echo "No tasks to view.";
     }
 }
+
+function check_taskfile_errors()
+{
+    if (isset($_SESSION['errors_files'])) {
+        $errors = $_SESSION['errors_files'];
+
+        echo '<div id="error-box" class="error-box">';
+        echo '<div class="error-icon">';
+        echo '<i class="fa-solid fa-circle-exclamation"></i>';
+        echo '</div>';
+        echo '<div class="error-msg">';
+        foreach ($errors as $error) {
+            echo '<p>' . $error . '</p>';
+        }
+        echo '</div>';
+        echo '</div>';
+
+        unset($_SESSION['errors_files']);
+    } elseif (isset($_SESSION['task_submit_success'])) {
+        echo '<div id="error-box" class="success-box">';
+        echo '<div class="error-icon">';
+        echo '<i class="fa-solid fa-circle-exclamation"></i>';
+        echo '</div>';
+        echo '<div class="error-msg">';
+        echo '<p>' . "Task Submitted Successfully!" . '</p>';
+        echo '</div>';
+        echo '</div>';
+    }
+    unset($_SESSION['errors_files']);
+}
