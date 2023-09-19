@@ -22,7 +22,7 @@ function approve_role_request(object $pdo, $user_id, $requested_role)
 {
     set_role_req_0($pdo, $user_id);
     change_role($pdo, $user_id, $requested_role);
-    delete_role_request($pdo, $user_id);
+    // delete_role_request($pdo, $user_id);
 }
 
 function delete_role_request(object $pdo, $user_id)
